@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InversionEnPantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                        },
+                        darkBg: '#0b0f17',
+                        cardBg: '#131b2e',
+                        borderBg: '#1f293d'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js for interactive dynamic charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f17;
+            color: #f3f4f6;
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+        }
+        .glow-subtle {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+        }
+        /* Custom range slider styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: #1f293d;
+            border-radius: 8px;
+            height: 8px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #10b981;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+            transition: transform 0.1s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-borderBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Inversion<span class="text-emerald-400">EnPantalla</span></span>
+                    <span class="text-xs text-emerald-400/80 block font-medium -mt-1">Educación Financiera</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#hero" class="hover:text-emerald-400 transition-colors">¿Por qué invertir?</a>
+                <a href="#calculadora" class="hover:text-emerald-400 transition-colors">Calculadora</a>
+                <a href="#aprende" class="hover:text-emerald-400 transition-colors">Aprende</a>
+                <a href="#faq" class="hover:text-emerald-400 transition-colors">Preguntas & Respuestas</a>
+                <a href="https://www.youtube.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors flex items-center gap-1.5 text-red-500 font-semibold">
+                    <i data-lucide="youtube" class="w-4 h-4"></i> Nuestro canal de YouTube
+                </a>
+            </nav>
+
+            <div>
+                <a href="#calculadora" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-sm">
+                    <span>Simular Inversión</span>
+                    <i data-lucide="calculator" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative pt-12 pb-20 overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> El mayor activo a tus 20 años es el tiempo
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        No trabajes para el dinero, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">haz que el dinero trabaje para ti.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+                        Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
+                    </p>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-cardBg/60 border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all">
+                        <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Vence a la Inflación</h3>
+                        <p class="text-sm text-gray-400">Si dejas 1.000 € guardados durante 10 años con una inflación media del 3%, tu dinero perderá casi un 25% de su valor real de compra.</p>
+                    </div>
+
+                    <div class="bg-cardBg/60 border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all">
+                        <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Efecto Bola de Nieve</h3>
+                        <p class="text-sm text-gray-400">El interés compuesto no solo genera ganancias sobre tu capital inicial, sino sobre los propios beneficios que vas acumulando año tras año.</p>
+                    </div>
+
+                    <div class="bg-cardBg/60 border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all">
+                        <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Independencia Financiera</h3>
+                        <p class="text-sm text-gray-400">Aprender a invertir bien mediante metodologías pasivas diversificadas reduce el riesgo y construye la base para tu estabilidad futura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALCULATOR SECTION -->
+        <section id="calculadora" class="py-16 bg-gradient-to-b from-transparent via-cardBg/30 to-transparent border-y border-borderBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-white">Calculadora de Interés Compuesto</h2>
+                    <p class="text-gray-400 mt-2">Prueba distintos escenarios y descubre el impacto real de empezar a invertir desde hoy.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <!-- Controls Panel -->
+                    <div class="lg:col-span-5 bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
+                        
+                        <!-- Capital Inicial -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-gray-300">Inversión Inicial</label>
+                                <div class="flex items-center gap-1 bg-darkBg px-3 py-1 rounded-lg border border-borderBg">
+                                    <span class="text-emerald-400 font-bold">€</span>
+                                    <input type="number" id="inputInitial" value="1000" min="0" step="100" class="w-20 bg-transparent text-right font-bold text-white focus:outline-none">
+                                </div>
+                            </div>
+                            <input type="range" id="sliderInitial" min="0" max="20000" step="250" value="1000" class="w-full">
+                        </div>
+
+                        <!-- Aportación Mensual -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-gray-300">Aportación Mensual</label>
+                                <div class="flex items-center gap-1 bg-darkBg px-3 py-1 rounded-lg border border-borderBg">
+                                    <span class="text-emerald-400 font-bold">€</span>
+                                    <input type="number" id="inputMonthly" value="100" min="0" step="10" class="w-20 bg-transparent text-right font-bold text-white focus:outline-none">
+                                </div>
+                            </div>
+                            <input type="range" id="sliderMonthly" min="0" max="1000" step="10" value="100" class="w-full">
+                        </div>
+
+                        <!-- Interés Anual Estimado -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-gray-300">Interés Anual Estimado (%)</label>
+                                <div class="flex items-center gap-1 bg-darkBg px-3 py-1 rounded-lg border border-borderBg">
+                                    <input type="number" id="inputRate" value="8" min="0" max="20" step="0.5" class="w-16 bg-transparent text-right font-bold text-white focus:outline-none">
+                                    <span class="text-emerald-400 font-bold">%</span>
+                                </div>
+                            </div>
+                            <input type="range" id="sliderRate" min="1" max="15" step="0.5" value="8" class="w-full">
+                            <p class="text-xs text-gray-500 mt-1">*Un fondo indexado global históricamente ha rentado entre 7% y 10% anual a largo plazo.</p>
+                        </div>
+
+                        <!-- Plazo en Años -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-gray-300">Tiempo de Inversión</label>
+                                <div class="flex items-center gap-1 bg-darkBg px-3 py-1 rounded-lg border border-borderBg">
+                                    <input type="number" id="inputYears" value="25" min="1" max="50" class="w-16 bg-transparent text-right font-bold text-white focus:outline-none">
+                                    <span class="text-emerald-400 font-bold">años</span>
+                                </div>
+                            </div>
+                            <input type="range" id="sliderYears" min="1" max="40" step="1" value="25" class="w-full">
+                        </div>
+
+                        <div class="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-300 flex items-start gap-2">
+                            <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                            <span>Los cálculos asumen capitalización mensual de intereses y una aportación constante durante todo el horizonte temporal.</span>
+                        </div>
+                    </div>
+
+                    <!-- Output & Visual Results -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <!-- Summary Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
+                                <span class="text-xs font-medium text-gray-400 block mb-1">Capital Final Estimado</span>
+                                <span id="resTotal" class="text-2xl font-black text-emerald-400">0 €</span>
+                            </div>
+
+                            <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
+                                <span class="text-xs font-medium text-gray-400 block mb-1">Tu Dinero Aportado</span>
+                                <span id="resDeposits" class="text-xl font-bold text-gray-200">0 €</span>
+                            </div>
+
+                            <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
+                                <span class="text-xs font-medium text-gray-400 block mb-1">Intereses Generados</span>
+                                <span id="resInterest" class="text-xl font-bold text-teal-300">0 €</span>
+                            </div>
+                        </div>
+
+                        <!-- Chart Box -->
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-base font-bold text-white">Evolución de Tu Patrimonio</h3>
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> Intereses</span>
+                                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-gray-500 inline-block"></span> Aportado</span>
+                                </div>
+                            </div>
+                            <div class="h-64 sm:h-72 w-full">
+                                <canvas id="growthChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Box -->
+                        <div class="bg-darkBg border border-borderBg p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">¿Y si lo hubieras dejado bajo el colchón?</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Sin invertir, tendrías solo <span id="resColchon" class="text-gray-200 font-semibold">0 €</span> (y con menor poder de compra por inflación).</p>
+                            </div>
+                            <div id="resDiferencia" class="px-4 py-2 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-emerald-300 text-sm font-extrabold whitespace-nowrap">
+                                +0 € de ganancia
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATIONAL GUIDES SECTION -->
+        <section id="aprende" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Aprende los Fundamentos</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-1">Cómo Invertir Bien y Con Seguridad</h2>
+                    <p class="text-gray-400 text-sm mt-2">Conceptos sencillos que todo joven de 19 o 20 años debe conocer antes de arriesgar su dinero.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">1. Estrategia y Diversificación</h3>
+                            <p class="text-sm text-gray-400">El análisis fundamental te permite elegir a las mejores empresas del mundo, pero conlleva tiempo y esfuerzo aprender. Para quienes buscan simplificar su estrategia, los ETFs y fondos indexados les ofrecen diversificación global y buena rentabilidad sin tener que aprender nada.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
+                            ¿Qué tipo de inversor eres?
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
+                                <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">2. Fondo de Emergencia</h3>
+                            <p class="text-sm text-gray-400">Antes de invertir el primer euro, guarda de 3 a 6 meses de tus gastos en una cuenta remunerada sin riesgo. Nunca inviertas dinero que vayas a necesitar a corto plazo. Hoy en día entidades como MyInvestor o TradeRepublic te ofrecen intereses por tener el dinero en la cuenta.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
+                            Tu colchón de tranquilidad
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
+                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">3. Evita Estafas y Humo</h3>
+                            <p class="text-sm text-gray-400">Desconfía de quien prometa rentabilidades garantizadas elevadas, esquemas piramidales o hacerse rico en semanas. La inversión real es aburrida, constante y a largo plazo. Como dijo Warren Buffett: "El mercado de valores es un mecanismo para transferir dinero de los impacientes a los pacientes"</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
+                            Garantía de supervivencia
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
+                                <i data-lucide="scale" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">4. Límites Legales (CNMV)</h3>
+                            <p class="text-sm text-gray-400">Es fundamental diferenciar entre **Educación Financiera** (enseñar conceptos) y **Asesoramiento Financiero** (decir a alguien en qué fondo poner su dinero específico), que requiere licencia regulatoria. Nosotros buscamos promover la cultura financiera entre los jóvenes.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
+                            Marco ético e informativo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PREGUNTAS Y RESPUESTAS -->
+        <section id="faq" class="py-16 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cardBg border border-borderBg rounded-2xl p-6 md:p-8 relative z-10 glow-subtle">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-white">Preguntas Frecuentes y Consultas</h2>
+                    <p class="text-gray-400 text-xs mt-1">Envíanos tus dudas. Las responderemos directamente a tu correo electrónico.</p>
+                </div>
+
+                <!-- Formulario Formspree -->
+                <form id="qaForm" action="https://formspree.io/f/mjygwnye" method="POST" class="space-y-4">
+                    <div>
+                        <label for="userEmail" class="block text-xs font-medium text-gray-300 mb-1">Tu email (para responderte):</label>
+                        <input 
+                            type="email" 
+                            id="userEmail" 
+                            name="email" 
+                            style="background-color: #ffffff; color: #000000;"
+                            class="w-full border border-gray-300 rounded-xl p-3 placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" 
+                            placeholder="tu@email.com" 
+                            required>
+                    </div>
+                    
+                    <div>
+                        <label for="userQuestion" class="block text-xs font-medium text-gray-300 mb-1">Escribe tu pregunta:</label>
+                        <textarea 
+                            id="userQuestion" 
+                            name="pregunta" 
+                            rows="3" 
+                            style="background-color: #ffffff; color: #000000;"
+                            class="w-full border border-gray-300 rounded-xl p-3 placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" 
+                            placeholder="Ej: ¿Qué diferencia hay entre un fondo indexado y un ETF?" 
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-3 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2">
+                        <span>Enviar Pregunta</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER WITH MANDATORY CNMV LEGAL DISCLAIMER -->
+    <footer class="bg-darkBg border-t border-borderBg py-10 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cardBg/60 border border-borderBg/80 rounded-2xl p-6 mb-8">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="shield-alert" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                    <div class="space-y-1">
+                        <span class="font-bold text-white text-sm block">Aviso Legal Regulatorio y Descargo de Responsabilidad (CNMV)</span>
+                        <p class="leading-relaxed text-gray-400">
+                            El contenido presente en esta plataforma web tiene una finalidad exclusivamente <strong>divulgativa, informativa y pedagógica</strong> sobre conceptos básicos de economía y finanzas personales. <strong>En ningún caso constituye recomendación explícita de compra o venta de ningún activo financiero, ni asesoramiento personalizado de inversión</strong> en los términos previstos por la normativa vigente regulada por la Comisión Nacional del Mercado de Valores (CNMV).
+                        </p>
+                        <p class="leading-relaxed text-gray-400 pt-1">
+                            Las rentabilidades pasadas no garantizan rentabilidades futuras. Las simulaciones realizadas en la calculadora son meras proyecciones teóricas basadas en supuestos numéricos y no representan promesas de rendimiento real. Antes de tomar cualquier decisión de inversión, te recomendamos consultar con profesionales financieros acreditados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+                <div>
+                    <span class="text-white font-bold text-sm">InversionEnPantalla - Proyecto Educativo Universitario</span>
+                    <p class="mt-0.5">Creado por estudiantes para promover la cultura financiera responsable.</p>
+                </div>
+                <div class="text-gray-500">
+                    &copy; <span id="currentYear"></span> InversionEnPantalla. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Dynamic Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- CALCULATOR & CHART ENGINE ---
+        const inputInitial = document.getElementById('inputInitial');
+        const sliderInitial = document.getElementById('sliderInitial');
+        const inputMonthly = document.getElementById('inputMonthly');
+        const sliderMonthly = document.getElementById('sliderMonthly');
+        const inputRate = document.getElementById('inputRate');
+        const sliderRate = document.getElementById('sliderRate');
+        const inputYears = document.getElementById('inputYears');
+        const sliderYears = document.getElementById('sliderYears');
+
+        const resTotal = document.getElementById('resTotal');
+        const resDeposits = document.getElementById('resDeposits');
+        const resInterest = document.getElementById('resInterest');
+        const resColchon = document.getElementById('resColchon');
+        const resDiferencia = document.getElementById('resDiferencia');
+
+        let chartInstance = null;
+
+        // Synchronize inputs & sliders
+        function syncInputs(input, slider) {
+            input.addEventListener('input', () => {
+                slider.value = input.value;
+                calculateAndRender();
+            });
+            slider.addEventListener('input', () => {
+                input.value = slider.value;
+                calculateAndRender();
+            });
+        }
+
+        syncInputs(inputInitial, sliderInitial);
+        syncInputs(inputMonthly, sliderMonthly);
+        syncInputs(inputRate, sliderRate);
+        syncInputs(inputYears, sliderYears);
+
+        // Format currency helper
+        function formatEUR(val) {
+            return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);
+        }
+
+        // Calculation & Chart Render logic
+        function calculateAndRender() {
+            const P = parseFloat(inputInitial.value) || 0;
+            const PMT = parseFloat(inputMonthly.value) || 0;
+            const annualRate = (parseFloat(inputRate.value) || 0) / 100;
+            const years = parseInt(inputYears.value) || 1;
+
+            const rMonthly = annualRate / 12;
+
+            const labels = [];
+            const depositsData = [];
+            const interestData = [];
+
+            let currentTotal = P;
+            let currentDeposits = P;
+
+            labels.push('Año 0');
+            depositsData.push(P);
+            interestData.push(0);
+
+            for (let y = 1; y <= years; y++) {
+                for (let m = 0; m < 12; m++) {
+                    currentTotal = (currentTotal + PMT) * (1 + rMonthly);
+                    currentDeposits += PMT;
+                }
+                labels.push(`Año ${y}`);
+                depositsData.push(Math.round(currentDeposits));
+                const accruedInterest = Math.max(0, currentTotal - currentDeposits);
+                interestData.push(Math.round(accruedInterest));
+            }
+
+            const finalTotal = Math.round(currentTotal);
+            const finalDeposits = Math.round(currentDeposits);
+            const finalInterest = Math.max(0, finalTotal - finalDeposits);
+
+            // Update UI Labels
+            resTotal.textContent = formatEUR(finalTotal);
+            resDeposits.textContent = formatEUR(finalDeposits);
+            resInterest.textContent = formatEUR(finalInterest);
+            resColchon.textContent = formatEUR(finalDeposits);
+
+            const diff = finalTotal - finalDeposits;
+            resDiferencia.textContent = `+${formatEUR(diff)} extras`;
+
+            // Render/Update Chart.js
+            const ctx = document.getElementById('growthChart').getContext('2d');
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Aportaciones',
+                            data: depositsData,
+                            backgroundColor: '#4b5563',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Intereses Generados',
+                            data: interestData,
+                            backgroundColor: '#10b981',
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#9ca3af', font: { size: 10 } }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { 
+                                color: '#9ca3af',
+                                font: { size: 10 },
+                                callback: function(val) {
+                                    return val >= 1000 ? (val/1000) + 'k €' : val + ' €';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#131b2e',
+                            titleColor: '#fff',
+                            bodyColor: '#d1d5db',
+                            borderColor: '#1f293d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${formatEUR(context.raw)}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // First Calculation Run on Page Load
+        window.onload = function() {
+            calculateAndRender();
+        };
+    </script>
+</body>
+</html>
