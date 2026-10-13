@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-42140FQRF4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-42140FQRF4');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42140FQRF4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-42140FQRF4');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InversionEnPantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
@@ -83,7 +82,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
 
-    <!-- HEADER / NAVIGATION -->
+    <!-- HEADER / NAVIGATION (Limpio como el original) -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-borderBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -131,6 +130,23 @@
                     <p class="mt-6 text-lg text-gray-400 leading-relaxed">
                         Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
                     </p>
+
+                    <!-- BANNER DESTACADO ARRIBA (DEBAJO DE LA INTRODUCCIÓN) -->
+                    <div class="mt-8 p-4 sm:p-5 bg-cardBg/80 border border-emerald-500/40 rounded-2xl max-w-2xl mx-auto backdrop-blur-sm glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl shrink-0">
+                                <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">¿Buscas una cuenta remunerada o sin comisiones?</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Rentabiliza tus ahorros desde el primer día con <strong>MyInvestor</strong><strong> ¡Y LLÉVATE 25€ GRATIS AL REGISTRARTE CON ESTE ENLACE!</strong></p>
+                            </div>
+                        </div>
+                        <a href=https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition duration-200 text-xs whitespace-nowrap shadow-md shadow-emerald-500/20 shrink-0">
+                           Abrir cuenta
+                        </a>
+                    </div>
                 </div>
 
                 <!-- 3 Pillars Grid -->
@@ -304,14 +320,23 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
+                    <!-- Card 2 (Fondo de Emergencia + Botón MyInvestor) -->
                     <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
                                 <i data-lucide="piggy-bank" class="w-6 h-6"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white mb-2">2. Fondo de Emergencia</h3>
-                            <p class="text-sm text-gray-400">Antes de invertir el primer euro, guarda de 3 a 6 meses de tus gastos en una cuenta remunerada sin riesgo. Nunca inviertas dinero que vayas a necesitar a corto plazo. Hoy en día entidades como MyInvestor o TradeRepublic te ofrecen intereses por tener el dinero en la cuenta.</p>
+                            <p class="text-sm text-gray-400">Antes de invertir el primer euro, guarda de 3 a 6 meses de tus gastos en una cuenta remunerada sin riesgo. Nunca inviertas dinero que vayas a necesitar a corto plazo. Hoy en día entidades como MyInvestor te ofrecen intereses por tener el dinero en la cuenta.</p>
+                            
+                            <!-- Botón de Afiliado MyInvestor en la tarjeta -->
+                            <div class="mt-4">
+                                <a href=https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR target="_blank" rel="noopener noreferrer" 
+                                   class="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2.5 rounded-xl transition-all text-xs shadow-md shadow-emerald-500/20">
+                                    <span>Abrir cuenta en MyInvestor</span>
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
                             Tu colchón de tranquilidad
