@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
-   <!-- Google Analytics -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-42140FQRF4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -9,10 +9,6 @@
         gtag('js', new Date());
         gtag('config', 'G-42140FQRF4');
     </script>
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7638079818476731"
-            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InversionEnPantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
@@ -62,7 +58,6 @@
         .glow-subtle {
             box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
         }
-        /* Custom range slider styling */
         input[type=range] {
             -webkit-appearance: none;
             background: #1f293d;
@@ -86,7 +81,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
 
-    <!-- HEADER / NAVIGATION (Limpio como el original) -->
+    <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-borderBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -99,13 +94,17 @@
                 </div>
             </div>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
                 <a href="#hero" class="hover:text-emerald-400 transition-colors">¿Por qué invertir?</a>
-                <a href="#calculadora" class="hover:text-emerald-400 transition-colors">Calculadora</a>
+                <a href="#simulador-acciones" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
+                    <i data-lucide="pie-chart" class="w-4 h-4 text-emerald-400"></i> Simulador de Acciones
+                </a>
+                <a href="#test-inversor" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
+                    <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> ¿Qué tipo de inversor eres?
+                </a>
                 <a href="#aprende" class="hover:text-emerald-400 transition-colors">Aprende</a>
-                <a href="#faq" class="hover:text-emerald-400 transition-colors">Preguntas & Respuestas</a>
                 <a href="https://www.youtube.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors flex items-center gap-1.5 text-red-500 font-semibold">
-                    <i data-lucide="youtube" class="w-4 h-4"></i> Nuestro canal de YouTube
+                    <i data-lucide="youtube" class="w-4 h-4"></i> YouTube
                 </a>
             </nav>
 
@@ -135,7 +134,7 @@
                         Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
                     </p>
 
-                    <!-- BANNER DESTACADO ARRIBA (DEBAJO DE LA INTRODUCCIÓN) -->
+                    <!-- BANNER MYINVESTOR -->
                     <div class="mt-8 p-4 sm:p-5 bg-cardBg/80 border border-emerald-500/40 rounded-2xl max-w-2xl mx-auto backdrop-blur-sm glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
                         <div class="flex items-center gap-3">
                             <div class="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl shrink-0">
@@ -146,7 +145,7 @@
                                 <p class="text-xs text-gray-400 mt-0.5">Rentabiliza tus ahorros desde el primer día con <strong>MyInvestor</strong><strong> ¡Y LLÉVATE 25€ GRATIS AL REGISTRARTE CON ESTE ENLACE!</strong></p>
                             </div>
                         </div>
-                        <a href=https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR target="_blank" rel="noopener noreferrer" 
+                        <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
                            class="w-full sm:w-auto text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition duration-200 text-xs whitespace-nowrap shadow-md shadow-emerald-500/20 shrink-0">
                            Abrir cuenta
                         </a>
@@ -182,6 +181,387 @@
             </div>
         </section>
 
+        <!-- SIMULADOR DE ACCIONES Y CARTERA PERSONALIZADA -->
+        <section id="simulador-acciones" class="py-16 bg-gradient-to-b from-transparent via-cardBg/30 to-transparent border-y border-borderBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Herramienta Interactiva</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Simulador de Cartera de Acciones</h2>
+                    <p class="text-gray-400 text-sm mt-2">Crea tu propio portafolio con hasta 10 acciones, asigna capital y define la rentabilidad anualizada de cada compañía.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <!-- Configuración del Portafolio -->
+                    <div class="lg:col-span-6 bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <h3 class="text-base font-bold text-white">Diseña Tu Cesta (Máx. 10 Acciones)</h3>
+                                <p class="text-xs text-gray-400 mt-0.5">Escribe el nombre de la empresa, asigna capital y rentabilidad anualizada.</p>
+                            </div>
+                            <button type="button" id="addStockBtn" class="bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-3 py-2 rounded-xl text-xs transition flex items-center gap-1.5 shadow-md shadow-emerald-500/20">
+                                <i data-lucide="plus" class="w-4 h-4"></i> Añadir Acción
+                            </button>
+                        </div>
+
+                        <!-- Capital Total Global -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Capital Total a Simular (€)</label>
+                            <div class="flex items-center gap-1 bg-darkBg px-3 py-2 rounded-xl border border-borderBg">
+                                <span class="text-emerald-400 font-bold">€</span>
+                                <input type="number" id="totalCapitalInput" value="10000" min="100" step="500" class="w-full bg-transparent font-bold text-white focus:outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Lista de Acciones Dinámica -->
+                        <div id="stocksListContainer" class="space-y-4 max-h-[420px] overflow-y-auto pr-2">
+                            <!-- Se inyecta por JavaScript -->
+                        </div>
+
+                        <div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-300 flex items-center justify-between">
+                            <span id="capitalStatusText">Capital asignado: 10.000 € / 10.000 €</span>
+                            <span id="capitalBadge" class="font-bold text-emerald-400">100% Asignado</span>
+                        </div>
+                    </div>
+
+                    <!-- Resultados y Gráfico Circular / Leyenda Limpia -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-base font-bold text-white">Distribución de Pesos del Portafolio</h3>
+                                <span id="portfolioReturnBadge" class="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-extrabold rounded-lg">
+                                    Rentabilidad Cartera: 0.0%
+                                </span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 items-center">
+                                <div class="h-60 w-full flex items-center justify-center relative">
+                                    <canvas id="portfolioChart"></canvas>
+                                </div>
+                                <!-- Leyenda Lateral Dinámica de Acciones y Porcentajes -->
+                                <div id="customLegendContainer" class="space-y-2 max-h-60 overflow-y-auto pr-1">
+                                    <!-- Se inyecta por JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resumen Detallado -->
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl space-y-3">
+                            <h4 class="text-sm font-bold text-white mb-2">Resumen de Rentabilidad Ponderada</h4>
+                            <div class="flex justify-between text-xs text-gray-300 border-b border-borderBg pb-2">
+                                <span>Capital Total Invertido:</span>
+                                <span id="resSummaryCapital" class="font-bold text-white">10.000 €</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-300 border-b border-borderBg pb-2">
+                                <span>Rentabilidad Anualizada Ponderada:</span>
+                                <span id="resSummaryReturn" class="font-bold text-emerald-400">0.0%</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-300 pt-1">
+                                <span>Valor Final Estimado (5 años):</span>
+                                <span id="resSummaryFinalValue" class="font-bold text-teal-300">0 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TEST DE PERFIL DE INVERSOR -->
+        <section id="test-inversor" class="py-16 bg-gradient-to-b from-transparent via-cardBg/40 to-transparent border-y border-borderBg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Test Interactivo</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">¿Qué tipo de inversor eres?</h2>
+                    <p class="text-gray-400 text-sm mt-2">Responde a este completo test de 15 preguntas para descubrir tu tolerancia al riesgo y la estrategia ideal para ti.</p>
+                </div>
+
+                <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle">
+                    <form id="quizForm" class="space-y-8">
+                        <!-- P1 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">1. ¿Cuál es tu horizonte temporal previsto para mantener tus inversiones?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p1" value="1" required class="accent-emerald-500"> Menos de 3 años
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p1" value="2" class="accent-emerald-500"> Entre 3 y 8 años
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p1" value="3" class="accent-emerald-500"> Más de 8-10 años
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P2 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">2. Si tu cartera de inversión pierde un 20% en pocos meses, ¿qué harías?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p2" value="1" required class="accent-emerald-500"> Vender todo por pánico
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p2" value="2" class="accent-emerald-500"> Mantener sin hacer nada
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p2" value="3" class="accent-emerald-500"> Comprar más aprovechando rebajas
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P3 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">3. ¿Cuál es tu objetivo principal al empezar a invertir?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p3" value="1" required class="accent-emerald-500"> Proteger capital de la inflación
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p3" value="2" class="accent-emerald-500"> Crecimiento constante y equilibrado
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p3" value="3" class="accent-emerald-500"> Máxima rentabilidad a largo plazo
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P4 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">4. ¿Qué porcentaje de tus ahorros totales vas a destinar a la inversión?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p4" value="1" required class="accent-emerald-500"> Una parte muy pequeña (&lt;15%)
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p4" value="2" class="accent-emerald-500"> Entre un 15% y un 50%
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p4" value="3" class="accent-emerald-500"> La gran mayoría de mis ahorros (&gt;50%)
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P5 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">5. ¿Tienes cubierto un fondo de emergencia para imprevistos?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p5" value="1" required class="accent-emerald-500"> No tengo colchón de emergencia
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p5" value="2" class="accent-emerald-500"> Tengo algo ahorrado (1-3 meses)
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p5" value="3" class="accent-emerald-500"> Sí, más de 3-6 meses asegurados
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P6 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">6. ¿Cómo valoras tus conocimientos actuales sobre mercados financieros?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p6" value="1" required class="accent-emerald-500"> Nulos o básicos
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p6" value="2" class="accent-emerald-500"> Intermedios (entiendo conceptos clave)
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p6" value="3" class="accent-emerald-500"> Avanzados (análisis y diversificación)
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P7 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">7. ¿Qué tipo de activos prefieres para tu estrategia inicial?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p7" value="1" required class="accent-emerald-500"> Cuentas remuneradas y letras
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p7" value="2" class="accent-emerald-500"> Fondos indexados globales mixtos
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p7" value="3" class="accent-emerald-500"> 100% Renta variable / Acciones / ETFs
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P8 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">8. ¿Con qué frecuencia planeas revisar o mirar tus inversiones?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p8" value="1" required class="accent-emerald-500"> Todos los días con ansiedad
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p8" value="2" class="accent-emerald-500"> Una vez al mes por curiosidad
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p8" value="3" class="accent-emerald-500"> Casi nunca (estrategia en piloto automático)
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P9 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">9. ¿Dependes de los ingresos generados por tus inversiones para vivir hoy?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p9" value="1" required class="accent-emerald-500"> Sí, necesito rendimiento periódico
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p9" value="2" class="accent-emerald-500"> Parcialmente
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p9" value="3" class="accent-emerald-500"> No, vivo de mis ingresos de trabajo/estudios
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P10 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">10. ¿Cuál es tu grado de estabilidad laboral o de ingresos estables?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p10" value="1" required class="accent-emerald-500"> Inciertos o estacionales
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p10" value="2" class="accent-emerald-500"> Moderadamente estables
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p10" value="3" class="accent-emerald-500"> Totalmente estables y seguros
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P11 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">11. Si te ofrecen una inversión con 50% de ganar el doble o perder la mitad, ¿qué haces?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p11" value="1" required class="accent-emerald-500"> Ni hablar, demasiado riesgo
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p11" value="2" class="accent-emerald-500"> Quizá una cantidad muy pequeña
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p11" value="3" class="accent-emerald-500"> Me parece una oportunidad lógica
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P12 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué importancia le das a la liquidez (poder retirar el dinero en 48 horas)?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p12" value="1" required class="accent-emerald-500"> Máxima, lo puedo necesitar ya
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p12" value="2" class="accent-emerald-500"> Moderada
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p12" value="3" class="accent-emerald-500"> Mínima, no tocaré el capital en años
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P13 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">13. ¿Prefieres rentabilidades fijas y seguras o variables ligadas al mercado?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p13" value="1" required class="accent-emerald-500"> 100% Fija garantizada
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p13" value="2" class="accent-emerald-500"> Mixta (renta fija y variable)
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p13" value="3" class="accent-emerald-500"> Variable a largo plazo sin complejos
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P14 -->
+                        <div class="border-b border-borderBg/60 pb-6">
+                            <h3 class="text-sm font-bold text-white mb-3">14. ¿Te genera estrés o ansiedad pensar en que tus inversiones fluctúen en bolsa?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p14" value="1" required class="accent-emerald-500"> Muchísimo, no dormiría
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p14" value="2" class="accent-emerald-500"> Un poco al principio
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p14" value="3" class="accent-emerald-500"> Nada, entiendo que es volatilidad normal
+                                </label>
+                            </div>
+                        </div>
+                        <!-- P15 -->
+                        <div class="pb-2">
+                            <h3 class="text-sm font-bold text-white mb-3">15. ¿Cuál es tu filosofía general ante el ahorro y el dinero?</h3>
+                            <div class="grid gap-2.5 sm:grid-cols-3">
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p15" value="1" required class="accent-emerald-500"> El dinero en mano y seguro
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p15" value="2" class="accent-emerald-500"> Ahorro constante con cabeza
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                    <input type="radio" name="p15" value="3" class="accent-emerald-500"> Inversión activa y construcción de patrimonio
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-4 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Calcular Mi Perfil y Ubicación</span>
+                        </button>
+                    </form>
+
+                    <!-- Resultado del Test -->
+                    <div id="quizResult" class="hidden mt-8 p-6 bg-darkBg border border-emerald-500/40 rounded-2xl glow-subtle">
+                        <div class="grid md:grid-cols-2 gap-6 items-start">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
+                                        <i data-lucide="award" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Tu perfil analizado:</span>
+                                        <h4 id="profileTitle" class="text-xl font-extrabold text-white">Inversor Moderado</h4>
+                                    </div>
+                                </div>
+                                <p id="profileDesc" class="text-xs text-gray-300 leading-relaxed">
+                                    Buscas un equilibrio óptimo entre rentabilidad y riesgo. Tu mejor aliada es la inversión pasiva diversificada a largo plazo.
+                                </p>
+
+                                <div class="mt-4 p-3.5 bg-cardBg border border-borderBg rounded-xl">
+                                    <span class="text-xs font-bold text-emerald-400 block mb-1.5 flex items-center gap-1.5">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> Activos recomendados para ti:
+                                    </span>
+                                    <p id="profileAssets" class="text-xs text-gray-300 leading-relaxed">
+                                        Cuentas remuneradas, fondos indexados globales mixtos y renta fija de calidad a medio plazo.
+                                    </p>
+                                </div>
+
+                                <div class="mt-4 pt-4 border-t border-borderBg flex flex-col gap-2">
+                                    <a href="#calculadora" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+                                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Ir a la calculadora
+                                    </a>
+                                    <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
+                                       class="inline-block text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2 rounded-xl transition duration-200 text-xs shadow-md shadow-emerald-500/20">
+                                       Empezar en MyInvestor (+25€ gratis)
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-cardBg border border-borderBg p-4 rounded-xl flex flex-col items-center justify-center">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Brújula de Perfil de Riesgo</span>
+                                <div class="relative w-full h-32 bg-darkBg border border-borderBg rounded-lg flex items-center justify-between px-4 overflow-hidden">
+                                    <div class="absolute inset-x-6 top-1/2 h-0.5 bg-borderBg -translate-y-1/2"></div>
+                                    <span class="absolute left-3 bottom-2 text-[10px] text-gray-500 font-medium">Conservador</span>
+                                    <span class="absolute right-3 bottom-2 text-[10px] text-gray-500 font-medium">Dinámico</span>
+                                    <span class="absolute left-1/2 -translate-x-1/2 bottom-2 text-[10px] text-gray-400 font-medium">Moderado</span>
+                                    <div id="compassDot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 bg-emerald-400 rounded-full border-4 border-darkBg shadow-lg shadow-emerald-500/50 transition-all duration-700 ease-out" style="left: 50%;"></div>
+                                </div>
+                                <span id="compassLabel" class="text-[11px] text-emerald-400 font-bold mt-3">Ubicación: Centro del espectro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CALCULATOR SECTION -->
         <section id="calculadora" class="py-16 bg-gradient-to-b from-transparent via-cardBg/30 to-transparent border-y border-borderBg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,10 +571,7 @@
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-8 items-start">
-                    <!-- Controls Panel -->
                     <div class="lg:col-span-5 bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
-                        
-                        <!-- Capital Inicial -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-semibold text-gray-300">Inversión Inicial</label>
@@ -206,7 +583,6 @@
                             <input type="range" id="sliderInitial" min="0" max="20000" step="250" value="1000" class="w-full">
                         </div>
 
-                        <!-- Aportación Mensual -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-semibold text-gray-300">Aportación Mensual</label>
@@ -218,7 +594,6 @@
                             <input type="range" id="sliderMonthly" min="0" max="1000" step="10" value="100" class="w-full">
                         </div>
 
-                        <!-- Interés Anual Estimado -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-semibold text-gray-300">Interés Anual Estimado (%)</label>
@@ -228,10 +603,8 @@
                                 </div>
                             </div>
                             <input type="range" id="sliderRate" min="1" max="15" step="0.5" value="8" class="w-full">
-                            <p class="text-xs text-gray-500 mt-1">*Un fondo indexado global históricamente ha rentado entre 7% y 10% anual a largo plazo.</p>
                         </div>
 
-                        <!-- Plazo en Años -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-semibold text-gray-300">Tiempo de Inversión</label>
@@ -242,59 +615,29 @@
                             </div>
                             <input type="range" id="sliderYears" min="1" max="40" step="1" value="25" class="w-full">
                         </div>
-
-                        <div class="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-300 flex items-start gap-2">
-                            <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Los cálculos asumen capitalización mensual de intereses y una aportación constante durante todo el horizonte temporal.</span>
-                        </div>
                     </div>
 
-                    <!-- Output & Visual Results -->
                     <div class="lg:col-span-7 space-y-6">
-                        
-                        <!-- Summary Cards -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
                                 <span class="text-xs font-medium text-gray-400 block mb-1">Capital Final Estimado</span>
                                 <span id="resTotal" class="text-2xl font-black text-emerald-400">0 €</span>
                             </div>
-
                             <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
                                 <span class="text-xs font-medium text-gray-400 block mb-1">Tu Dinero Aportado</span>
                                 <span id="resDeposits" class="text-xl font-bold text-gray-200">0 €</span>
                             </div>
-
                             <div class="bg-cardBg border border-borderBg p-5 rounded-2xl">
                                 <span class="text-xs font-medium text-gray-400 block mb-1">Intereses Generados</span>
                                 <span id="resInterest" class="text-xl font-bold text-teal-300">0 €</span>
                             </div>
                         </div>
 
-                        <!-- Chart Box -->
                         <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="text-base font-bold text-white">Evolución de Tu Patrimonio</h3>
-                                <div class="flex items-center gap-4 text-xs">
-                                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> Intereses</span>
-                                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-gray-500 inline-block"></span> Aportado</span>
-                                </div>
-                            </div>
                             <div class="h-64 sm:h-72 w-full">
                                 <canvas id="growthChart"></canvas>
                             </div>
                         </div>
-
-                        <!-- Comparison Box -->
-                        <div class="bg-darkBg border border-borderBg p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <div>
-                                <h4 class="text-sm font-bold text-white">¿Y si lo hubieras dejado bajo el colchón?</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">Sin invertir, tendrías solo <span id="resColchon" class="text-gray-200 font-semibold">0 €</span> (y con menor poder de compra por inflación).</p>
-                            </div>
-                            <div id="resDiferencia" class="px-4 py-2 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-emerald-300 text-sm font-extrabold whitespace-nowrap">
-                                +0 € de ganancia
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -306,159 +649,313 @@
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Aprende los Fundamentos</span>
                     <h2 class="text-3xl font-extrabold text-white mt-1">Cómo Invertir Bien y Con Seguridad</h2>
-                    <p class="text-gray-400 text-sm mt-2">Conceptos sencillos que todo joven de 19 o 20 años debe conocer antes de arriesgar su dinero.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Card 1 -->
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                <i data-lucide="layers" class="w-6 h-6"></i>
-                            </div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4"><i data-lucide="layers" class="w-6 h-6"></i></div>
                             <h3 class="text-lg font-bold text-white mb-2">1. Estrategia y Diversificación</h3>
-                            <p class="text-sm text-gray-400">El análisis fundamental te permite elegir a las mejores empresas del mundo, pero conlleva tiempo y esfuerzo aprender. Para quienes buscan simplificar su estrategia, los ETFs y fondos indexados les ofrecen diversificación global y buena rentabilidad sin tener que aprender nada.</p>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
-                            ¿Qué tipo de inversor eres?
+                            <p class="text-sm text-gray-400">Los fondos indexados ofrecen diversificación global sin complicaciones.</p>
                         </div>
                     </div>
-
-                    <!-- Card 2 (Fondo de Emergencia + Botón MyInvestor) -->
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                <i data-lucide="piggy-bank" class="w-6 h-6"></i>
-                            </div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4"><i data-lucide="piggy-bank" class="w-6 h-6"></i></div>
                             <h3 class="text-lg font-bold text-white mb-2">2. Fondo de Emergencia</h3>
-                            <p class="text-sm text-gray-400">Antes de invertir el primer euro, guarda de 3 a 6 meses de tus gastos en una cuenta remunerada sin riesgo. Nunca inviertas dinero que vayas a necesitar a corto plazo. Hoy en día entidades como MyInvestor te ofrecen intereses por tener el dinero en la cuenta.</p>
-                            
-                            <!-- Botón de Afiliado MyInvestor en la tarjeta -->
+                            <p class="text-sm text-gray-400">Guarda de 3 a 6 meses de gastos en cuentas remuneradas como MyInvestor.</p>
                             <div class="mt-4">
-                                <a href=https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR target="_blank" rel="noopener noreferrer" 
-                                   class="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2.5 rounded-xl transition-all text-xs shadow-md shadow-emerald-500/20">
-                                    <span>Abrir cuenta en MyInvestor</span>
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
+                                   class="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2.5 rounded-xl text-xs">
+                                   <span>Abrir cuenta MyInvestor</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
-                            Tu colchón de tranquilidad
+                    </div>
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4"><i data-lucide="alert-triangle" class="w-6 h-6"></i></div>
+                            <h3 class="text-lg font-bold text-white mb-2">3. Evita Estafas</h3>
+                            <p class="text-sm text-gray-400">Desconfía de quien prometa rentabilidades milagrosas a corto plazo.</p>
                         </div>
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">3. Evita Estafas y Humo</h3>
-                            <p class="text-sm text-gray-400">Desconfía de quien prometa rentabilidades garantizadas elevadas, esquemas piramidales o hacerse rico en semanas. La inversión real es aburrida, constante y a largo plazo. Como dijo Warren Buffett: "El mercado de valores es un mecanismo para transferir dinero de los impacientes a los pacientes"</p>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
-                            Garantía de supervivencia
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                <i data-lucide="scale" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2">4. Límites Legales (CNMV)</h3>
-                            <p class="text-sm text-gray-400">Es fundamental diferenciar entre **Educación Financiera** (enseñar conceptos) y **Asesoramiento Financiero** (decir a alguien en qué fondo poner su dinero específico), que requiere licencia regulatoria. Nosotros buscamos promover la cultura financiera entre los jóvenes.</p>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-borderBg/60 text-xs text-emerald-400 font-semibold">
-                            Marco ético e informativo
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4"><i data-lucide="scale" class="w-6 h-6"></i></div>
+                            <h3 class="text-lg font-bold text-white mb-2">4. Marco Legal (CNMV)</h3>
+                            <p class="text-sm text-gray-400">Divulgación educativa sin asesoramiento financiero directo.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE PREGUNTAS Y RESPUESTAS -->
+        <!-- FAQ SECTION -->
         <section id="faq" class="py-16 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-cardBg border border-borderBg rounded-2xl p-6 md:p-8 relative z-10 glow-subtle">
+            <div class="bg-cardBg border border-borderBg rounded-2xl p-6 md:p-8 glow-subtle">
                 <div class="text-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Preguntas Frecuentes y Consultas</h2>
-                    <p class="text-gray-400 text-xs mt-1">Envíanos tus dudas. Las responderemos directamente a tu correo electrónico.</p>
                 </div>
-
-                <!-- Formulario Formspree -->
                 <form id="qaForm" action="https://formspree.io/f/mjygwnye" method="POST" class="space-y-4">
                     <div>
-                        <label for="userEmail" class="block text-xs font-medium text-gray-300 mb-1">Tu email (para responderte):</label>
-                        <input 
-                            type="email" 
-                            id="userEmail" 
-                            name="email" 
-                            style="background-color: #ffffff; color: #000000;"
-                            class="w-full border border-gray-300 rounded-xl p-3 placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" 
-                            placeholder="tu@email.com" 
-                            required>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">Tu email:</label>
+                        <input type="email" name="email" style="background-color: #ffffff; color: #000000;" class="w-full border rounded-xl p-3 text-sm" placeholder="tu@email.com" required>
                     </div>
-                    
                     <div>
-                        <label for="userQuestion" class="block text-xs font-medium text-gray-300 mb-1">Escribe tu pregunta:</label>
-                        <textarea 
-                            id="userQuestion" 
-                            name="pregunta" 
-                            rows="3" 
-                            style="background-color: #ffffff; color: #000000;"
-                            class="w-full border border-gray-300 rounded-xl p-3 placeholder-gray-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500" 
-                            placeholder="Ej: ¿Qué diferencia hay entre un fondo indexado y un ETF?" 
-                            required></textarea>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">Tu pregunta:</label>
+                        <textarea name="pregunta" rows="3" style="background-color: #ffffff; color: #000000;" class="w-full border rounded-xl p-3 text-sm" placeholder="Escribe aquí..." required></textarea>
                     </div>
-
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-3 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2">
-                        <span>Enviar Pregunta</span>
-                    </button>
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-3 rounded-xl text-sm">Enviar Pregunta</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER WITH MANDATORY CNMV LEGAL DISCLAIMER -->
-    <footer class="bg-darkBg border-t border-borderBg py-10 text-gray-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-cardBg/60 border border-borderBg/80 rounded-2xl p-6 mb-8">
-                <div class="flex items-start gap-3">
-                    <i data-lucide="shield-alert" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-                    <div class="space-y-1">
-                        <span class="font-bold text-white text-sm block">Aviso Legal Regulatorio y Descargo de Responsabilidad (CNMV)</span>
-                        <p class="leading-relaxed text-gray-400">
-                            El contenido presente en esta plataforma web tiene una finalidad exclusivamente <strong>divulgativa, informativa y pedagógica</strong> sobre conceptos básicos de economía y finanzas personales. <strong>En ningún caso constituye recomendación explícita de compra o venta de ningún activo financiero, ni asesoramiento personalizado de inversión</strong> en los términos previstos por la normativa vigente regulada por la Comisión Nacional del Mercado de Valores (CNMV).
-                        </p>
-                        <p class="leading-relaxed text-gray-400 pt-1">
-                            Las rentabilidades pasadas no garantizan rentabilidades futuras. Las simulaciones realizadas en la calculadora son meras proyecciones teóricas basadas en supuestos numéricos y no representan promesas de rendimiento real. Antes de tomar cualquier decisión de inversión, te recomendamos consultar con profesionales financieros acreditados.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-                <div>
-                    <span class="text-white font-bold text-sm">InversionEnPantalla - Proyecto Educativo Universitario</span>
-                    <p class="mt-0.5">Creado por estudiantes para promover la cultura financiera responsable.</p>
-                </div>
-                <div class="text-gray-500">
-                    &copy; <span id="currentYear"></span> InversionEnPantalla. Todos los derechos reservados.
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-darkBg border-t border-borderBg py-8 text-gray-400 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; <span id="currentYear"></span> InversionEnPantalla. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
-
-        // Dynamic Current Year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // --- CALCULATOR & CHART ENGINE ---
+        // --- SIMULADOR DE ACCIONES & CARTERA ---
+        let portfolioStocks = [
+            { name: "Apple", capital: 2000, returnRate: 10 },
+            { name: "Microsoft", capital: 2000, returnRate: 9 },
+            { name: "Tesla", capital: 2000, returnRate: 15 },
+            { name: "Coca-Cola", capital: 2000, returnRate: 7 },
+            { name: "Iberdrola", capital: 2000, returnRate: 6 }
+        ];
+
+        const stocksListContainer = document.getElementById('stocksListContainer');
+        const addStockBtn = document.getElementById('addStockBtn');
+        const totalCapitalInput = document.getElementById('totalCapitalInput');
+        const capitalStatusText = document.getElementById('capitalStatusText');
+        const capitalBadge = document.getElementById('capitalBadge');
+        const portfolioReturnBadge = document.getElementById('portfolioReturnBadge');
+        const resSummaryCapital = document.getElementById('resSummaryCapital');
+        const resSummaryReturn = document.getElementById('resSummaryReturn');
+        const resSummaryFinalValue = document.getElementById('resSummaryFinalValue');
+        const customLegendContainer = document.getElementById('customLegendContainer');
+
+        let portfolioChartInstance = null;
+        // Paleta de colores variada y llamativa para distinguir los trozos del círculo
+        const backgroundColors = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6', '#06b6d4', '#84cc16', '#f97316', '#6366f1', '#14b8a6'];
+
+        function renderStocksList() {
+            stocksListContainer.innerHTML = '';
+            portfolioStocks.forEach((stock, index) => {
+                const stockItem = document.createElement('div');
+                stockItem.className = 'p-3.5 bg-darkBg border border-borderBg rounded-xl space-y-3';
+                stockItem.innerHTML = `
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 w-full">
+                            <span class="text-xs font-bold text-emerald-400 whitespace-nowrap">Empresa ${index + 1}:</span>
+                            <input type="text" value="${stock.name}" data-index="${index}" placeholder="Ej: Apple" class="stock-name bg-transparent font-bold text-white text-xs w-full focus:outline-none border-b border-transparent focus:border-emerald-500">
+                        </div>
+                        ${portfolioStocks.length > 1 ? `<button type="button" onclick="removeStock(${index})" class="text-gray-500 hover:text-red-400 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>` : ''}
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[10px] text-gray-400 mb-1">Capital Asignado (€)</label>
+                            <input type="number" value="${stock.capital}" data-index="${index}" min="0" class="stock-capital w-full bg-cardBg border border-borderBg rounded-lg p-2 text-xs font-bold text-white focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-gray-400 mb-1">Rentabilidad Anualizada (%)</label>
+                            <input type="number" value="${stock.returnRate}" data-index="${index}" step="0.5" class="stock-return w-full bg-cardBg border border-borderBg rounded-lg p-2 text-xs font-bold text-emerald-400 focus:outline-none focus:border-emerald-500">
+                        </div>
+                    </div>
+                `;
+                stocksListContainer.appendChild(stockItem);
+            });
+            lucide.createIcons();
+            attachStockListeners();
+            calculatePortfolio();
+        }
+
+        function attachStockListeners() {
+            document.querySelectorAll('.stock-name').forEach(input => {
+                input.addEventListener('input', (e) => {
+                    const cleanName = e.target.value.trim();
+                    portfolioStocks[e.target.dataset.index].name = cleanName ? cleanName : `Empresa ${parseInt(e.target.dataset.index) + 1}`;
+                    calculatePortfolio();
+                });
+            });
+            document.querySelectorAll('.stock-capital').forEach(input => {
+                input.addEventListener('input', (e) => {
+                    portfolioStocks[e.target.dataset.index].capital = parseFloat(e.target.value) || 0;
+                    calculatePortfolio();
+                });
+            });
+            document.querySelectorAll('.stock-return').forEach(input => {
+                input.addEventListener('input', (e) => {
+                    portfolioStocks[e.target.dataset.index].returnRate = parseFloat(e.target.value) || 0;
+                    calculatePortfolio();
+                });
+            });
+        }
+
+        function removeStock(index) {
+            if (portfolioStocks.length > 1) {
+                portfolioStocks.splice(index, 1);
+                renderStocksList();
+            }
+        }
+
+        addStockBtn.addEventListener('click', () => {
+            if (portfolioStocks.length < 10) {
+                portfolioStocks.push({ name: `Empresa ${portfolioStocks.length + 1}`, capital: 1000, returnRate: 8 });
+                renderStocksList();
+            } else {
+                alert("Puedes añadir un máximo de 10 acciones para mantener una correcta diversificación visual.");
+            }
+        });
+
+        totalCapitalInput.addEventListener('input', () => {
+            calculatePortfolio();
+        });
+
+        function formatEUR(val) {
+            return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);
+        }
+
+        function calculatePortfolio() {
+            const totalTargetCapital = parseFloat(totalCapitalInput.value) || 0;
+            let currentAllocatedCapital = portfolioStocks.reduce((sum, s) => sum + s.capital, 0);
+
+            capitalStatusText.textContent = `Capital asignado: ${formatEUR(currentAllocatedCapital)} / ${formatEUR(totalTargetCapital)}`;
+            if (currentAllocatedCapital === totalTargetCapital) {
+                capitalBadge.textContent = "100% Asignado";
+                capitalBadge.className = "font-bold text-emerald-400";
+            } else {
+                capitalBadge.textContent = "Descuadre de capital";
+                capitalBadge.className = "font-bold text-amber-400";
+            }
+
+            resSummaryCapital.textContent = formatEUR(currentAllocatedCapital);
+
+            let weightedReturnSum = 0;
+            portfolioStocks.forEach(stock => {
+                weightedReturnSum += (stock.capital * stock.returnRate);
+            });
+
+            const portfolioAverageReturn = currentAllocatedCapital > 0 ? (weightedReturnSum / currentAllocatedCapital) : 0;
+            resSummaryReturn.textContent = portfolioAverageReturn.toFixed(2) + '%';
+            portfolioReturnBadge.textContent = `Rentabilidad Cartera: ${portfolioAverageReturn.toFixed(2)}%`;
+
+            const years = 5;
+            const finalEstimatedValue = currentAllocatedCapital * Math.pow(1 + (portfolioAverageReturn / 100), years);
+            resSummaryFinalValue.textContent = formatEUR(finalEstimatedValue);
+
+            const labels = portfolioStocks.map(s => s.name);
+            const dataValues = portfolioStocks.map(s => s.capital);
+
+            // Renderizar la leyenda lateral limpia con los colores diferenciados de cada porción
+            customLegendContainer.innerHTML = '';
+            portfolioStocks.forEach((stock, idx) => {
+                const percentage = currentAllocatedCapital > 0 ? ((stock.capital / currentAllocatedCapital) * 100).toFixed(1) : 0;
+                const legendItem = document.createElement('div');
+                legendItem.className = 'flex items-center justify-between p-2 bg-darkBg border border-borderBg rounded-lg text-xs';
+                legendItem.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-full shrink-0 shadow-sm" style="background-color: ${backgroundColors[idx % backgroundColors.length]};"></span>
+                        <span class="font-bold text-white truncate max-w-[100px]">${stock.name}</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-emerald-400 font-bold">${percentage}%</span>
+                        <span class="text-gray-400 text-[10px] block">${formatEUR(stock.capital)}</span>
+                    </div>
+                `;
+                customLegendContainer.appendChild(legendItem);
+            });
+
+            const ctx = document.getElementById('portfolioChart').getContext('2d');
+            if (portfolioChartInstance) portfolioChartInstance.destroy();
+
+            portfolioChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: backgroundColors.slice(0, portfolioStocks.length),
+                        borderWidth: 2,
+                        borderColor: '#131b2e'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#131b2e',
+                            titleColor: '#fff',
+                            bodyColor: '#d1d5db',
+                            borderColor: '#1f293d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    const val = context.raw;
+                                    const percentage = currentAllocatedCapital > 0 ? ((val / currentAllocatedCapital) * 100).toFixed(1) : 0;
+                                    return ` ${context.label}: ${formatEUR(val)} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- QUIZ LOGIC ---
+        const quizForm = document.getElementById('quizForm');
+        const quizResult = document.getElementById('quizResult');
+        const profileTitle = document.getElementById('profileTitle');
+        const profileDesc = document.getElementById('profileDesc');
+        const profileAssets = document.getElementById('profileAssets');
+        const compassDot = document.getElementById('compassDot');
+        const compassLabel = document.getElementById('compassLabel');
+
+        quizForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let totalScore = 0;
+            for (let i = 1; i <= 15; i++) {
+                const val = quizForm[`p${i}`] ? parseInt(quizForm[`p${i}`].value) : 1;
+                totalScore += val;
+            }
+
+            const minScore = 15, maxScore = 45;
+            let percentage = ((totalScore - minScore) / (maxScore - minScore)) * 100;
+            percentage = Math.max(5, Math.min(95, percentage));
+            compassDot.style.left = `${percentage}%`;
+
+            if (totalScore <= 22) {
+                profileTitle.textContent = "Inversor Conservador 🛡️";
+                profileDesc.textContent = "Priorizas la seguridad y la preservación absoluta del capital frente a la volatilidad.";
+                profileAssets.textContent = "Cuentas remuneradas (como MyInvestor), Letras del Tesoro a corto plazo, y depósitos bancarios garantizados sin riesgo.";
+                compassLabel.textContent = "Ubicación: Perfil Conservador";
+            } else if (totalScore <= 35) {
+                profileTitle.textContent = "Inversor Moderado ⚖️";
+                profileDesc.textContent = "Buscas un equilibrio ideal entre crecimiento a largo plazo y control del riesgo.";
+                profileAssets.textContent = "Fondos indexados globales mixtos (acciones y bonos), bonos corporativos de alta calidad y cartera diversificada equilibrada.";
+                compassLabel.textContent = "Ubicación: Perfil Moderado";
+            } else {
+                profileTitle.textContent = "Inversor Dinámico / Crecimiento 🚀";
+                profileDesc.textContent = "Tienes un perfil preparado para asumir oscilaciones de mercado en busca de máxima rentabilidad a largo plazo.";
+                profileAssets.textContent = "100% Renta variable global (fondos indexados MSCI World / S&P 500), ETFs sectoriales y acciones individuales seleccionadas por análisis fundamental.";
+                compassLabel.textContent = "Ubicación: Perfil Dinámico";
+            }
+
+            quizResult.classList.remove('hidden');
+            quizResult.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // --- CALCULATOR ENGINE ---
         const inputInitial = document.getElementById('inputInitial');
         const sliderInitial = document.getElementById('sliderInitial');
         const inputMonthly = document.getElementById('inputMonthly');
@@ -471,52 +968,26 @@
         const resTotal = document.getElementById('resTotal');
         const resDeposits = document.getElementById('resDeposits');
         const resInterest = document.getElementById('resInterest');
-        const resColchon = document.getElementById('resColchon');
-        const resDiferencia = document.getElementById('resDiferencia');
-
         let chartInstance = null;
 
-        // Synchronize inputs & sliders
         function syncInputs(input, slider) {
-            input.addEventListener('input', () => {
-                slider.value = input.value;
-                calculateAndRender();
-            });
-            slider.addEventListener('input', () => {
-                input.value = slider.value;
-                calculateAndRender();
-            });
+            input.addEventListener('input', () => { slider.value = input.value; calculateAndRender(); });
+            slider.addEventListener('input', () => { input.value = slider.value; calculateAndRender(); });
         }
-
         syncInputs(inputInitial, sliderInitial);
         syncInputs(inputMonthly, sliderMonthly);
         syncInputs(inputRate, sliderRate);
         syncInputs(inputYears, sliderYears);
 
-        // Format currency helper
-        function formatEUR(val) {
-            return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);
-        }
-
-        // Calculation & Chart Render logic
         function calculateAndRender() {
             const P = parseFloat(inputInitial.value) || 0;
             const PMT = parseFloat(inputMonthly.value) || 0;
             const annualRate = (parseFloat(inputRate.value) || 0) / 100;
             const years = parseInt(inputYears.value) || 1;
-
             const rMonthly = annualRate / 12;
 
-            const labels = [];
-            const depositsData = [];
-            const interestData = [];
-
-            let currentTotal = P;
-            let currentDeposits = P;
-
-            labels.push('Año 0');
-            depositsData.push(P);
-            interestData.push(0);
+            let labels = ['Año 0'], depositsData = [P], interestData = [0];
+            let currentTotal = P, currentDeposits = P;
 
             for (let y = 1; y <= years; y++) {
                 for (let m = 0; m < 12; m++) {
@@ -525,91 +996,38 @@
                 }
                 labels.push(`Año ${y}`);
                 depositsData.push(Math.round(currentDeposits));
-                const accruedInterest = Math.max(0, currentTotal - currentDeposits);
-                interestData.push(Math.round(accruedInterest));
+                interestData.push(Math.max(0, Math.round(currentTotal - currentDeposits)));
             }
 
-            const finalTotal = Math.round(currentTotal);
-            const finalDeposits = Math.round(currentDeposits);
-            const finalInterest = Math.max(0, finalTotal - finalDeposits);
+            resTotal.textContent = formatEUR(currentTotal);
+            resDeposits.textContent = formatEUR(currentDeposits);
+            resInterest.textContent = formatEUR(Math.max(0, currentTotal - currentDeposits));
 
-            // Update UI Labels
-            resTotal.textContent = formatEUR(finalTotal);
-            resDeposits.textContent = formatEUR(finalDeposits);
-            resInterest.textContent = formatEUR(finalInterest);
-            resColchon.textContent = formatEUR(finalDeposits);
-
-            const diff = finalTotal - finalDeposits;
-            resDiferencia.textContent = `+${formatEUR(diff)} extras`;
-
-            // Render/Update Chart.js
             const ctx = document.getElementById('growthChart').getContext('2d');
-
-            if (chartInstance) {
-                chartInstance.destroy();
-            }
+            if (chartInstance) chartInstance.destroy();
 
             chartInstance = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: labels,
                     datasets: [
-                        {
-                            label: 'Aportaciones',
-                            data: depositsData,
-                            backgroundColor: '#4b5563',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'Intereses Generados',
-                            data: interestData,
-                            backgroundColor: '#10b981',
-                            borderRadius: 4
-                        }
+                        { label: 'Aportaciones', data: depositsData, backgroundColor: '#4b5563', borderRadius: 4 },
+                        { label: 'Intereses', data: interestData, backgroundColor: '#10b981', borderRadius: 4 }
                     ]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     scales: {
-                        x: {
-                            stacked: true,
-                            grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { color: '#9ca3af', font: { size: 10 } }
-                        },
-                        y: {
-                            stacked: true,
-                            grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { 
-                                color: '#9ca3af',
-                                font: { size: 10 },
-                                callback: function(val) {
-                                    return val >= 1000 ? (val/1000) + 'k €' : val + ' €';
-                                }
-                            }
-                        }
+                        x: { stacked: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { size: 10 } } },
+                        y: { stacked: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { size: 10 }, callback: (val) => val >= 1000 ? (val/1000) + 'k €' : val + ' €' } }
                     },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: '#131b2e',
-                            titleColor: '#fff',
-                            bodyColor: '#d1d5db',
-                            borderColor: '#1f293d',
-                            borderWidth: 1,
-                            callbacks: {
-                                label: function(context) {
-                                    return ` ${context.dataset.label}: ${formatEUR(context.raw)}`;
-                                }
-                            }
-                        }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
         }
 
-        // First Calculation Run on Page Load
-        window.onload = function() {
+        window.onload = () => {
+            renderStocksList();
             calculateAndRender();
         };
     </script>
