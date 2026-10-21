@@ -172,6 +172,40 @@
         </div>
     </header>
 
+    <!-- TICKER ULTRAFINO (3 ÍNDICES + ACCIONES PERSONALIZADAS) -->
+    <div class="bg-darkBg border-b border-borderBg overflow-hidden select-none" style="height: 38px;">
+        <div class="tradingview-widget-container" style="height: 100%;">
+            <div class="tradingview-widget-container__widget" style="height: 100%;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+                    {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq"},
+                    {"proName": "FOREXCOM:DJI", "title": "Dow Jones"},
+                    {"proName": "NASDAQ:AAPL", "title": "Apple"},
+                    {"proName": "NASDAQ:MSFT", "title": "Microsoft"},
+                    {"proName": "NASDAQ:GOOGL", "title": "Google"},
+                    {"proName": "NASDAQ:AMZN", "title": "Amazon"},
+                    {"proName": "NASDAQ:NVDA", "title": "Nvidia"},
+                    {"proName": "NASDAQ:META", "title": "Meta"},
+                    {"proName": "NASDAQ:TSLA", "title": "Tesla"},
+                    {"proName": "NASDAQ:MU", "title": "Micron"},
+                    {"proName": "NASDAQ:PEP", "title": "PepsiCo"},
+                    {"proName": "NYSE:MCD", "title": "McDonald's"},
+                    {"proName": "NYSE:UBER", "title": "Uber"},
+                    {"proName": "NYSE:NEE", "title": "NextEra Energy"},
+                    {"proName": "NASDAQ:NFLX", "title": "Netflix"}
+                ],
+                "showSymbolLogo": true,
+                "isTransparent": true,
+                "displayMode": "adaptive",
+                "colorTheme": "dark",
+                "locale": "es"
+            }
+            </script>
+        </div>
+    </div>
+
     <main class="flex-grow">
 
         <!-- ================= PESTAÑA 1: INICIO ================= -->
@@ -192,7 +226,7 @@
                             Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
                         </p>
 
-                        <!-- PÍLDORA CON COMISIONES MÍNIMAS -->
+                        <!-- PÍLDORA MYINVESTOR -->
                         <div class="mt-8 p-4 bg-gradient-to-r from-cardBg via-emerald-950/30 to-cardBg border border-emerald-500/50 rounded-2xl max-w-2xl mx-auto backdrop-blur-md glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
                             <div class="flex items-center gap-3">
                                 <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0 border border-emerald-500/30">
@@ -319,7 +353,6 @@
                                 </div>
                             </div>
 
-                            <!-- LLAMADA A LA ACCIÓN CONTEXTUAL DESPUÉS DE CALCULAR -->
                             <div class="p-5 bg-cardBg border border-emerald-500/40 rounded-2xl glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <div class="space-y-1 text-left">
                                     <span class="text-[10px] font-extrabold text-emerald-400 uppercase tracking-wider block">¿Quieres poner este dinero a trabajar?</span>
@@ -327,10 +360,10 @@
                                     <p class="text-xs text-gray-400">Neobanco regulado por el Banco de España y CNMV con garantía de hasta 100.000€.</p>
                                 </div>
                                 <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
-   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/20 shrink-0">
-   <span>Abrir Cuenta MyInvestor</span>
-   <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-</a>
+                                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/20 shrink-0">
+                                   <span>Abrir Cuenta MyInvestor</span>
+                                   <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -443,7 +476,7 @@
                                     <i data-lucide="newspaper" class="w-6 h-6"></i>
                                 </div>
                                 <h3 class="text-lg font-bold text-white mb-2">5. Actualidad Diaria</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Para mantenerte informado con las mejores noticias del mercado bursátil y la economía en tiempo real, te aconsejamos seguir la comunidad de Instagram <a href="https://www.instagram.com/bolsahoy/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-semibold hover:underline">BolsaHoy</a>, donde comparten análisis rápidos y de calidad.</p>
+                                <p class="text-sm text-gray-400 leading-relaxed">Para mantenerte informado con las mejores noticias del mercado bursátil y la economía en tiempo real, te aconsejamos seguir la comunidad de Instagram <a href="https://www.instagram.com/bolsahoy/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-semibold hover:underline">Bolsa hoy</a>, donde comparten análisis rápidos y de calidad.</p>
                             </div>
                             <div class="mt-6 pt-4 border-t border-borderBg/60">
                                 <a href="https://www.instagram.com/bolsahoy/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1">
@@ -890,57 +923,80 @@
 
         <!-- ================= PESTAÑA 5: QUIÉNES SOMOS ================= -->
         <div id="tab-quienes-somos" class="tab-content hidden py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-                    <div class="lg:col-span-7 space-y-5 flex flex-col justify-center">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider w-fit">
-                            <i data-lucide="users" class="w-3.5 h-3.5"></i> Proyecto Creado por Universitarios
-                        </div>
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">
-                            Quiénes somos y <span class="text-emerald-400">por qué nació este proyecto</span>
-                        </h2>
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            Somos tres amigos universitarios de 19 años apasionados por las finanzas y la tecnología. Al entrar en la universidad nos dimos cuenta de que la gran mayoría de jóvenes no reciben educación financiera básica en las aulas.
-                        </p>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Por eso creamos <strong>InversionEnPantalla</strong>: un espacio visual, intuitivo y 100% gratuito para ayudar a nuestra generación a perder el miedo a gestionar su dinero con cabeza.
-                        </p>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                        <i data-lucide="users" class="w-3.5 h-3.5"></i> Proyecto Creado por Universitarios de la UJI
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">
+                        Quiénes somos y <span class="text-emerald-400">por qué nació este proyecto</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Somos tres amigos de 19 años estudiando en la Universitat Jaume I (UJI) en Castellón. Al entrar en la universidad nos dimos cuenta de que la gran mayoría de jóvenes no reciben educación financiera básica en las aulas. Por eso creamos <strong>InversionEnPantalla</strong>: un espacio visual, intuitivo y 100% gratuito para ayudar a nuestra generación a perder el miedo a gestionar su dinero con cabeza. Ambos tres empezamos a invertir a los 18 años y nos hemos formado fuertemente mediante cursos como <em>Invertir desde cero</em> de Fernando Sánchez, nuestro gran referente.
+                    </p>
+                </div>
 
-                        <div class="grid sm:grid-cols-3 gap-4 pt-2">
-                            <div class="p-3.5 bg-darkBg border border-borderBg rounded-xl">
-                                <span class="text-emerald-400 font-extrabold text-xl block">19 Años</span>
-                                <span class="text-xs text-gray-400">Estudiantes universitarios</span>
+                <!-- EQUIPO / TARJETAS UNIFICADAS CON ICONO DE PERSONA -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Joel Anglés -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-4 glow-subtle">
+                        <div>
+                            <div class="w-16 h-16 mx-auto mb-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-8 h-8"></i>
                             </div>
-                            <div class="p-3.5 bg-darkBg border border-borderBg rounded-xl">
-                                <span class="text-emerald-400 font-extrabold text-xl block">100% Gratis</span>
-                                <span class="text-xs text-gray-400">Contenido divulgativo</span>
-                            </div>
-                            <div class="p-3.5 bg-darkBg border border-borderBg rounded-xl">
-                                <span class="text-emerald-400 font-extrabold text-xl block">Divulgación</span>
-                                <span class="text-xs text-gray-400">Concienciación joven</span>
-                            </div>
+                            <h3 class="text-lg font-bold text-white text-center">Joel Anglés</h3>
+                            <span class="text-xs font-semibold text-emerald-400 block text-center mt-0.5">Ciencias del Deporte (CAFID) - UJI</span>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-3">
+                                Estudiante de 19 años en la UJI. Empezó a invertir a los 18 tras formarse con referentes como Fernando Sánchez, combinando su pasión por el rendimiento y la disciplina aplicada al ahorro y las finanzas personales.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-borderBg text-[11px] text-gray-400 text-center">
+                            🚀 Cofundador de InversionEnPantalla
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle flex flex-col justify-between space-y-4">
-                        <div class="space-y-3">
-                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit">
-                                <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                    <!-- Raúl Margean -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-4 glow-subtle">
+                        <div>
+                            <div class="w-16 h-16 mx-auto mb-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-8 h-8"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white">Conoce un poco nuestra historia</h3>
-                            <p class="text-xs text-gray-300 leading-relaxed">
-                                Este proyecto nació entre clases universitarias y charlas de café al ver que dejar el dinero en la cuenta bancaria sin más supone perder poder adquisitivo de forma silenciosa debido a la inflación.
+                            <h3 class="text-lg font-bold text-white text-center">Raúl Margean</h3>
+                            <span class="text-xs font-semibold text-emerald-400 block text-center mt-0.5">Finanzas y Contabilidad - UJI</span>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-3">
+                                Estudiante de 19 años en la UJI. Comenzó su camino en la inversión a los 18 años. Formado con referentes como Fernando Sánchez, aporta su visión analítica en la gestión de carteras y herramientas de simulación.
                             </p>
                         </div>
-                        <div class="p-4 bg-darkBg border border-emerald-500/30 rounded-xl space-y-1.5">
-                            <span class="text-xs font-bold text-emerald-400 block flex items-center gap-1.5">
-                                <i data-lucide="info" class="w-4 h-4"></i> Nota informativa importante
-                            </span>
-                            <p class="text-[11px] text-gray-400 leading-relaxed">
-                                Este sitio web es exclusivamente educativo y pedagógico. <strong>No ofrecemos recomendaciones de inversión ni asesoramiento financiero personalizado.</strong>
-                            </p>
+                        <div class="pt-3 border-t border-borderBg text-[11px] text-gray-400 text-center">
+                            💡 Cofundador de InversionEnPantalla
                         </div>
                     </div>
+
+                    <!-- Miguel Forés -->
+                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-4 glow-subtle">
+                        <div>
+                            <div class="w-16 h-16 mx-auto mb-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white text-center">Miguel Forés</h3>
+                            <span class="text-xs font-semibold text-emerald-400 block text-center mt-0.5">Finanzas y Contabilidad - UJI</span>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-3">
+                                Estudiante de 19 años en la UJI. Apasionado de los mercados financieros desde los 18 años, enfocado en el análisis económico y en acercar conceptos bursátiles complejos de forma sencilla a los jóvenes.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-borderBg text-[11px] text-gray-400 text-center">
+                            📊 Cofundador de InversionEnPantalla
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-cardBg border border-emerald-500/30 rounded-2xl text-center max-w-2xl mx-auto">
+                    <span class="text-xs font-bold text-emerald-400 block mb-1 flex items-center justify-center gap-1.5">
+                        <i data-lucide="info" class="w-4 h-4"></i> Nota informativa importante
+                    </span>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Este sitio web es exclusivamente educativo y pedagógico. <strong>No ofrecemos recomendaciones de inversión ni asesoramiento financiero personalizado.</strong>
+                    </p>
                 </div>
             </div>
         </div>
@@ -969,6 +1025,44 @@
             </div>
         </section>
     </main>
+
+    <!-- BOT DE IA FLOTANTE (CONECTADO CON GEMINI API) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Botón flotante -->
+        <button id="aiChatToggle" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-105 focus:outline-none cursor-pointer">
+            <i data-lucide="bot" class="w-7 h-7"></i>
+        </button>
+
+        <!-- Ventana de Chat -->
+        <div id="aiChatWindow" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-cardBg border border-borderBg rounded-2xl shadow-2xl overflow-hidden flex flex-col transition-all">
+            <!-- Cabecera -->
+            <div class="bg-darkBg px-4 py-3 border-b border-borderBg flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                    <span class="text-xs font-extrabold text-white">Gemini AI - InversionEnPantalla</span>
+                </div>
+                <button id="aiChatClose" class="text-gray-400 hover:text-white transition">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Cuerpo de mensajes -->
+            <div id="aiChatMessages" class="p-4 h-72 overflow-y-auto space-y-3 text-xs text-gray-300">
+                <div class="bg-darkBg p-3 rounded-xl border border-borderBg space-y-1">
+                    <strong class="text-emerald-400 block font-bold">¡Hola! Soy Gemini 🤖</strong>
+                    <p>Estoy conectado en tiempo real para resolver cualquier duda que tengas sobre mercados, finanzas personales o sobre InversionEnPantalla. ¿En qué te puedo ayudar?</p>
+                </div>
+            </div>
+
+            <!-- Caja de texto -->
+            <div class="p-3 bg-darkBg border-t border-borderBg flex gap-2">
+                <input type="text" id="aiChatInput" placeholder="Hazle una pregunta a Gemini..." class="w-full bg-cardBg border border-borderBg rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+                <button id="aiChatSend" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-3 py-2 rounded-xl text-xs transition shrink-0 flex items-center justify-center">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER WITH MANDATORY CNMV LEGAL DISCLAIMER -->
     <footer class="bg-darkBg border-t border-borderBg py-10 text-gray-400 text-xs">
@@ -1033,6 +1127,81 @@
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // --- CONEXIÓN REAL CON GOOGLE GEMINI API ---
+        const GEMINI_API_KEY = "AQ.Ab8RN6IvmOJpYj6O8iBbWV4B-qoyV_ODBqQsog5eNkh0j8ksGg";
+
+        const aiChatToggle = document.getElementById('aiChatToggle');
+        const aiChatWindow = document.getElementById('aiChatWindow');
+        const aiChatClose = document.getElementById('aiChatClose');
+        const aiChatInput = document.getElementById('aiChatInput');
+        const aiChatSend = document.getElementById('aiChatSend');
+        const aiChatMessages = document.getElementById('aiChatMessages');
+
+        aiChatToggle.addEventListener('click', () => {
+            aiChatWindow.classList.toggle('hidden');
+            aiChatInput.focus();
+        });
+
+        aiChatClose.addEventListener('click', () => {
+            aiChatWindow.classList.add('hidden');
+        });
+
+        async function handleUserMessage() {
+            const text = aiChatInput.value.trim();
+            if(!text) return;
+
+            // 1. Mostrar mensaje del usuario
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-emerald-500/10 border border-emerald-500/30 p-2.5 rounded-xl ml-6 text-right text-white';
+            userMsg.textContent = text;
+            aiChatMessages.appendChild(userMsg);
+            aiChatInput.value = '';
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+            // 2. Crear caja para respuesta de Gemini
+            const botMsg = document.createElement('div');
+            botMsg.className = 'bg-darkBg border border-borderBg p-2.5 rounded-xl mr-6 text-gray-200';
+            botMsg.innerHTML = '<span class="text-emerald-400 font-bold animate-pulse">Gemini está pensando... 🤖</span>';
+            aiChatMessages.appendChild(botMsg);
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: "Eres el asistente inteligente de educación financiera de 'InversionEnPantalla', un proyecto educativo creado por tres estudiantes de 19 años de la Universidad UJI de Castellón (Joel, Raúl y Miguel). Responde a la siguiente consulta de forma clara, directa, educada y didáctica para jóvenes inversores. Pregunta: " + text
+                            }]
+                        }]
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    let replyText = data.candidates[0].content.parts[0].text;
+                    replyText = replyText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    replyText = replyText.replace(/\n/g, '<br>');
+                    botMsg.innerHTML = replyText;
+                } else if (data.error) {
+                    botMsg.innerHTML = `⚠️ Error de la API de Gemini: ${data.error.message || 'Verifica tu API Key'}`;
+                } else {
+                    botMsg.innerHTML = "💡 Entendido. Como asistente de InversionEnPantalla, te recomiendo revisar la sección de Glosario o el simulador de carteras para comprobar datos históricos.";
+                }
+            } catch (error) {
+                botMsg.innerHTML = "⚠️ Si la web está en modo local (file://), el navegador bloquea la conexión. Al subir la web a GitHub Pages funcionará automáticamente al instante.";
+            }
+
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        }
+
+        aiChatSend.addEventListener('click', handleUserMessage);
+        aiChatInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') handleUserMessage();
+        });
 
         // --- CALCULADORA CAFÉ VS INVERSIÓN ---
         const cafeGasto = document.getElementById('cafeGasto');
