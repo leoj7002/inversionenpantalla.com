@@ -170,6 +170,40 @@
                 </a>
             </div>
         </div>
+
+        <!-- TICKER TRADINGVIEW (JUSTO DEBAJO DE LAS PESTAÑAS) -->
+        <div class="w-full bg-darkBg/95 border-t border-borderBg">
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                    { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
+                    { "proName": "FOREXCOM:NSXUSD", "title": "NASDAQ" },
+                    { "proName": "FOREXCOM:DJI", "title": "Dow Jones" },
+                    { "proName": "NASDAQ:META", "title": "Meta" },
+                    { "proName": "NASDAQ:GOOGL", "title": "Google" },
+                    { "proName": "NASDAQ:NVDA", "title": "Nvidia" },
+                    { "proName": "NASDAQ:MSFT", "title": "Microsoft" },
+                    { "proName": "NYSE:UBER", "title": "Uber" },
+                    { "proName": "NYSE:NEE", "title": "NextEra Energy" },
+                    { "proName": "NASDAQ:MU", "title": "Micron" },
+                    { "proName": "NASDAQ:AAPL", "title": "Apple" },
+                    { "proName": "NASDAQ:TSLA", "title": "Tesla" },
+                    { "proName": "NASDAQ:AMZN", "title": "Amazon" },
+                    { "proName": "NASDAQ:NFLX", "title": "Netflix" },
+                    { "proName": "NASDAQ:PEP", "title": "PepsiCo" },
+                    { "proName": "NYSE:MCD", "title": "McDonald's" }
+                ],
+                "showSymbolLogo": true,
+                "isTransparent": true,
+                "displayMode": "adaptive",
+                "colorTheme": "dark",
+                "locale": "es"
+                }
+                </script>
+            </div>
+        </div>
     </header>
 
     <main class="flex-grow">
@@ -890,7 +924,7 @@
 
         <!-- ================= PESTAÑA 5: QUIÉNES SOMOS ================= -->
         <div id="tab-quienes-somos" class="tab-content hidden py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                     <div class="lg:col-span-7 space-y-5 flex flex-col justify-center">
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider w-fit">
@@ -939,6 +973,73 @@
                             <p class="text-[11px] text-gray-400 leading-relaxed">
                                 Este sitio web es exclusivamente educativo y pedagógico. <strong>No ofrecemos recomendaciones de inversión ni asesoramiento financiero personalizado.</strong>
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETAS DEL EQUIPO DE FUNDADORES -->
+                <div>
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">El Equipo Fundador</span>
+                        <h3 class="text-2xl font-extrabold text-white mt-1">Conoce a los creadores</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Tarjeta Joel Anglés -->
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg">
+                                    JA
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Joel Anglés</h4>
+                                    <span class="text-xs text-emerald-400 font-semibold">Cofundador | 19 años</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Apasionado del mundo de la inversión y los mercados financieros. Empezó a invertir activamente a los 18 años mientras cursa sus estudios en la universidad. Formado con el programa <strong>Invertir desde Cero</strong> de Fernando Sánchez, su gran referente en finanzas personales.
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-borderBg/60 text-[11px] text-gray-400 flex items-center gap-1.5">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Estudiante Universitario
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Raúl Margean -->
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg">
+                                    RM
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Raúl Margean</h4>
+                                    <span class="text-xs text-emerald-400 font-semibold">Cofundador | 19 años</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Apasionado de la inversión, la gestión patrimonial y el interés compuesto. Comenzó su andadura en el mundo inversor al cumplir los 18 años combinándolo con su carrera universitaria. Se ha formado intensamente a través de <strong>Invertir desde Cero</strong> con Fernando Sánchez como referente clave.
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-borderBg/60 text-[11px] text-gray-400 flex items-center gap-1.5">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Estudiante Universitario
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Miguel Forés -->
+                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl glow-subtle flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg">
+                                    MF
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Miguel Forés</h4>
+                                    <span class="text-xs text-emerald-400 font-semibold">Cofundador | 19 años</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Apasionado de la renta variable, el análisis bursátil y la tecnología. Invierte desde los 18 años y actualmente estudia en la universidad. Cuenta con formación en <strong>Invertir desde Cero</strong> junto a Fernando Sánchez, una de sus mayores influencias en la cultura financiera.
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-borderBg/60 text-[11px] text-gray-400 flex items-center gap-1.5">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Estudiante Universitario
+                            </div>
                         </div>
                     </div>
                 </div>
