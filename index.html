@@ -77,6 +77,15 @@
         input[type=range]::-webkit-slider-thumb:hover {
             transform: scale(1.15);
         }
+        /* Garantiza que el Ticker ocupe su altura propia sin cortarse ni ocultarse */
+        .tv-ticker-wrapper {
+            width: 100%;
+            min-height: 46px;
+            display: block;
+        }
+        .tv-ticker-wrapper iframe {
+            min-height: 46px !important;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-black">
@@ -171,9 +180,9 @@
             </div>
         </div>
 
-        <!-- TICKER TRADINGVIEW (MÁS FINO Y MÁS RÁPIDO) -->
-        <div class="w-full bg-darkBg/95 border-t border-borderBg py-0.5 overflow-hidden">
-            <div class="tradingview-widget-container max-h-11">
+        <!-- TICKER TRADINGVIEW RESPONSIVO -->
+        <div class="w-full bg-darkBg border-t border-borderBg tv-ticker-wrapper">
+            <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
                 {
@@ -186,7 +195,7 @@
                     { "proName": "NASDAQ:NVDA", "title": "Nvidia" },
                     { "proName": "NASDAQ:MSFT", "title": "Microsoft" },
                     { "proName": "NYSE:UBER", "title": "Uber" },
-                    { "proName": "NYSE:NEE", "title": "NextEra Energy" },
+                    { "proName": "NASDAQ:NXT", "title": "Nextpower" },
                     { "proName": "NASDAQ:MU", "title": "Micron" },
                     { "proName": "NASDAQ:AAPL", "title": "Apple" },
                     { "proName": "NASDAQ:TSLA", "title": "Tesla" },
@@ -197,7 +206,7 @@
                 ],
                 "showSymbolLogo": true,
                 "isTransparent": true,
-                "displayMode": "compact",
+                "displayMode": "adaptive",
                 "colorTheme": "dark",
                 "locale": "es"
                 }
