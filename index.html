@@ -213,12 +213,13 @@
                 </script>
             </div>
         </div>
+    </header>
 
     <main class="flex-grow">
 
         <!-- ================= PESTAÑA 1: INICIO ================= -->
         <div id="tab-inicio" class="tab-content">
-            <!-- HERO SECTION -->
+            <!-- HERO SECTION (LIMPIO Y PROFESIONAL) -->
             <section id="hero" class="relative pt-12 pb-20 overflow-hidden">
                 <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))]"></div>
                 
@@ -235,24 +236,17 @@
                             Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
                         </p>
 
-                        <!-- PÍLDORA CON COMISIONES MÍNIMAS -->
-                        <div class="mt-8 p-4 bg-gradient-to-r from-cardBg via-emerald-950/30 to-cardBg border border-emerald-500/50 rounded-2xl max-w-2xl mx-auto backdrop-blur-md glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-                            <div class="flex items-center gap-3">
-                                <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0 border border-emerald-500/30">
-                                    <i data-lucide="gift" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-white flex items-center gap-2 flex-wrap">
-                                        <span>Plataforma recomendada para empezar</span>
-                                        <span class="px-2 py-0.5 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase rounded-md tracking-wider">¡25€ Gratis!</span>
-                                    </h4>
-                                    <p class="text-[11px] text-gray-300 mt-0.5">Rentabiliza tus ahorros con comisiones mínimas en <strong>MyInvestor</strong> (FGD España hasta 100.000€).</p>
-                                </div>
-                            </div>
-                            <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
-                               class="w-full sm:w-auto text-center bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-extrabold px-4 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/25 shrink-0">
-                               Abre una cuenta y llévate 25€!
-                            </a>
+                        <!-- PÍLDORA DISCRETA Y ELEGANTE DE VALOR -->
+                        <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-gray-400 font-medium">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Herramientas 100% Gratuitas
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Sin necesidad de registro
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Enfocado en Jóvenes
+                            </span>
                         </div>
                     </div>
 
@@ -370,10 +364,25 @@
                                     <p class="text-xs text-gray-400">Neobanco regulado por el Banco de España y CNMV con garantía de hasta 100.000€.</p>
                                 </div>
                                 <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
-   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/20 shrink-0">
-   <span>Abrir Cuenta MyInvestor</span>
-   <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-</a>
+                                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/20 shrink-0">
+                                   <span>Abrir Cuenta MyInvestor</span>
+                                   <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+
+                            <!-- ACCESO A PREGUNTAS Y DUDAS (POSICIONADO TRAS LA CALCULADORA) -->
+                            <div class="p-5 bg-cardBg border border-emerald-500/40 rounded-2xl glow-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="space-y-1 text-left">
+                                    <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 text-[11px] font-bold uppercase tracking-wider">
+                                        <i data-lucide="help-circle" class="w-3.5 h-3.5"></i> ¿Te ha surgido alguna duda?
+                                    </div>
+                                    <h4 class="text-sm font-bold text-white">Escríbenos y te respondemos</h4>
+                                    <p class="text-xs text-gray-400">Envíanos tus preguntas a <span class="text-emerald-400 font-semibold">inversionenpantalla@gmail.com</span> o usa nuestro canal directo.</p>
+                                </div>
+                                <a href="#faq" onclick="switchTab('inicio');" class="w-full sm:w-auto text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-extrabold px-5 py-2.5 rounded-xl transition text-xs whitespace-nowrap shadow-lg shadow-emerald-500/25 shrink-0 flex items-center justify-center gap-2">
+                                    <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                                    <span>Pregúntanos aquí</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1072,7 +1081,11 @@
             <div class="bg-cardBg border border-borderBg rounded-2xl p-6 md:p-8 relative z-10 glow-subtle">
                 <div class="text-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Preguntas Frecuentes y Consultas</h2>
-                    <p class="text-gray-400 text-xs mt-1">Envíanos tus dudas. Las responderemos directamente a tu correo electrónico.</p>
+                    <p class="text-gray-400 text-xs mt-1">
+                        Envíanos tus dudas o escríbenos directamente a 
+                        <a href="mailto:inversionenpantalla@gmail.com" class="text-emerald-400 font-semibold hover:underline">inversionenpantalla@gmail.com</a>. 
+                        ¡Te responderemos encantados!
+                    </p>
                 </div>
 
                 <form id="qaForm" action="https://formspree.io/f/xppqenbg" method="POST" class="space-y-4">
