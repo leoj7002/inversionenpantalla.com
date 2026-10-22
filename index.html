@@ -108,7 +108,7 @@
                     <i data-lucide="home" class="w-4 h-4"></i> Inicio
                 </button>
                 <button onclick="switchTab('test')" id="nav-test" class="tab-btn hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
-                    <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> ¿Qué tipo de inversor eres?
+                    <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> Tests de inversión
                 </button>
                 
                 <!-- DROPDOWN HERRAMIENTAS INTERACTIVAS -->
@@ -176,7 +176,7 @@
                 <i data-lucide="home" class="w-4 h-4 text-emerald-400"></i> Inicio
             </button>
             <button onclick="switchTab('test'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> ¿Qué tipo de inversor eres?
+                <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> Test de inversión
             </button>
             <button onclick="switchTab('herramientas'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
                 <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i> Herramientas Interactivas
@@ -467,7 +467,7 @@
                                 <p class="text-sm text-gray-400 leading-relaxed">El análisis fundamental te permite elegir a las mejores empresas del mundo, pero conlleva tiempo y esfuerzo aprender. Para quienes buscan simplificar su estrategia, los ETFs y fondos indexados les ofrecen diversificación global y buena rentabilidad a largo plazo sin necesidad de vigilar gráficos cada día.</p>
                             </div>
                             <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <button onclick="switchTab('test')" class="text-xs font-bold text-emerald-400 hover:underline">¿Qué tipo de inversor eres?</button>
+                                <button onclick="switchTab('test')" class="text-xs font-bold text-emerald-400 hover:underline">Test de inversión</button>
                             </div>
                         </div>
 
@@ -531,277 +531,821 @@
         </div>
 
 
-        <!-- ================= PESTAÑA 2: TEST DE PERFIL ================= -->
+        <!-- ================= PESTAÑA 2: TEST DE INVERSIÓN (TRES TESTS) ================= -->
         <div id="tab-test" class="tab-content hidden py-16">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-10">
-                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Test Interactivo</span>
-                    <h2 class="text-3xl font-extrabold text-white mt-3">¿Qué tipo de inversor eres?</h2>
-                    <p class="text-gray-400 text-sm mt-2">Responde a este completo test de 15 preguntas para descubrir tu tolerancia al riesgo y la estrategia ideal para ti.</p>
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Centro de Tests</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Tests de Inversión</h2>
+                    <p class="text-gray-400 text-sm mt-2">Elige qué test deseas realizar para autoevaluar tu perfil, tus conocimientos de bolsa o tu psicología como inversor.</p>
+
+                    <!-- SELECTOR DE LOS 3 SUB-TESTS -->
+                    <div class="flex flex-wrap justify-center gap-3 mt-6">
+                        <button onclick="selectSubTest('perfil')" id="btn-subtest-perfil" class="subtest-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-black shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="compass" class="w-4 h-4"></i> Test 1: Perfil de Riesgo
+                        </button>
+                        <button onclick="selectSubTest('conocimientos')" id="btn-subtest-conocimientos" class="subtest-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
+                            <i data-lucide="brain" class="w-4 h-4 text-emerald-400"></i> Test 2: Nivel Bolsa Avanzado
+                        </button>
+                        <button onclick="selectSubTest('psicologia')" id="btn-subtest-psicologia" class="subtest-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
+                            <i data-lucide="shield-question" class="w-4 h-4 text-emerald-400"></i> Test 3: Psicología y Sesgos
+                        </button>
+                    </div>
                 </div>
 
-                <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle">
-                    <form id="quizForm" class="space-y-8">
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">1. ¿Cuál es tu horizonte temporal previsto para mantener tus inversiones?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p1" value="1" required class="accent-emerald-500"> Menos de 3 años
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p1" value="2" class="accent-emerald-500"> Entre 3 y 8 años
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p1" value="3" class="accent-emerald-500"> Más de 8-10 años
-                                </label>
-                            </div>
+                <!-- SUB-TEST 1: PERFIL DE INVERSOR -->
+                <div id="subtest-content-perfil" class="subtest-content">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle">
+                        <div class="mb-6 text-center">
+                            <h3 class="text-xl font-extrabold text-white">Test de Perfil de Riesgo (15 preguntas)</h3>
+                            <p class="text-xs text-gray-400 mt-1">Descubre tu tolerancia al riesgo y los activos ideales para ti.</p>
                         </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">2. Si tu cartera de inversión pierde un 20% en pocos meses, ¿qué harías?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p2" value="1" required class="accent-emerald-500"> Vender todo por pánico
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p2" value="2" class="accent-emerald-500"> Mantener sin hacer nada
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p2" value="3" class="accent-emerald-500"> Comprar más aprovechando rebajas
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">3. ¿Cuál es tu objetivo principal al empezar a invertir?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p3" value="1" required class="accent-emerald-500"> Proteger capital de la inflación
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p3" value="2" class="accent-emerald-500"> Crecimiento constante y equilibrado
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p3" value="3" class="accent-emerald-500"> Máxima rentabilidad a largo plazo
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">4. ¿Qué porcentaje de tus ahorros totales vas a destinar a la inversión?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p4" value="1" required class="accent-emerald-500"> Una parte muy pequeña (&lt;15%)
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p4" value="2" class="accent-emerald-500"> Entre un 15% y un 50%
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p4" value="3" class="accent-emerald-500"> La gran mayoría de mis ahorros (&gt;50%)
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">5. ¿Tienes cubierto un fondo de emergencia para imprevistos?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p5" value="1" required class="accent-emerald-500"> No tengo colchón de emergencia
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p5" value="2" class="accent-emerald-500"> Tengo algo ahorrado (1-3 meses)
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p5" value="3" class="accent-emerald-500"> Sí, más de 3-6 meses asegurados
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">6. ¿Cómo valoras tus conocimientos actuales sobre mercados financieros?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p6" value="1" required class="accent-emerald-500"> Nulos o básicos
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p6" value="2" class="accent-emerald-500"> Intermedios
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p6" value="3" class="accent-emerald-500"> Avanzados
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">7. ¿Qué tipo de activos prefieres para tu estrategia inicial?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p7" value="1" required class="accent-emerald-500"> Cuentas remuneradas y letras
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p7" value="2" class="accent-emerald-500"> Fondos indexados globales
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p7" value="3" class="accent-emerald-500"> 100% Acciones / ETFs
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">8. ¿Con qué frecuencia planeas revisar tus inversiones?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p8" value="1" required class="accent-emerald-500"> Todos los días
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p8" value="2" class="accent-emerald-500"> Una vez al mes
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p8" value="3" class="accent-emerald-500"> Casi nunca
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">9. ¿Dependes de los ingresos generados por tus inversiones hoy?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p9" value="1" required class="accent-emerald-500"> Sí, necesito rendimiento
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p9" value="2" class="accent-emerald-500"> Parcialmente
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p9" value="3" class="accent-emerald-500"> No, vivo de mi trabajo/estudios
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">10. ¿Cuál es tu grado de estabilidad laboral o de ingresos?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p10" value="1" required class="accent-emerald-500"> Inciertos
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p10" value="2" class="accent-emerald-500"> Moderadamente estables
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p10" value="3" class="accent-emerald-500"> Totalmente estables
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">11. Si te ofrecen una inversión con 50% de ganar el doble o perder la mitad, ¿qué haces?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p11" value="1" required class="accent-emerald-500"> Ni hablar
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p11" value="2" class="accent-emerald-500"> Cantidad muy pequeña
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p11" value="3" class="accent-emerald-500"> Oportunidad lógica
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué importancia le das a la liquidez (retirar en 48 horas)?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p12" value="1" required class="accent-emerald-500"> Máxima
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p12" value="2" class="accent-emerald-500"> Moderada
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p12" value="3" class="accent-emerald-500"> Mínima, no lo tocaré en años
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">13. ¿Prefieres rentabilidades fijas o variables ligadas al mercado?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p13" value="1" required class="accent-emerald-500"> 100% Fija
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p13" value="2" class="accent-emerald-500"> Mixta
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p13" value="3" class="accent-emerald-500"> Variable a largo plazo
-                                </label>
-                            </div>
-                        </div>
-                        <div class="border-b border-borderBg/60 pb-6">
-                            <h3 class="text-sm font-bold text-white mb-3">14. ¿Te genera estrés pensar en que tus inversiones fluctúen en bolsa?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p14" value="1" required class="accent-emerald-500"> Muchísimo
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p14" value="2" class="accent-emerald-500"> Un poco al principio
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p14" value="3" class="accent-emerald-500"> Nada
-                                </label>
-                            </div>
-                        </div>
-                        <div class="pb-2">
-                            <h3 class="text-sm font-bold text-white mb-3">15. ¿Cuál es tu filosofía general ante el ahorro y el dinero?</h3>
-                            <div class="grid gap-2.5 sm:grid-cols-3">
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p15" value="1" required class="accent-emerald-500"> El dinero en mano y seguro
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p15" value="2" class="accent-emerald-500"> Ahorro constante con cabeza
-                                </label>
-                                <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                    <input type="radio" name="p15" value="3" class="accent-emerald-500"> Inversión activa
-                                </label>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-4 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            <span>Calcular Mi Perfil y Ubicación</span>
-                        </button>
-                    </form>
-
-                    <div id="quizResult" class="hidden mt-8 p-6 bg-darkBg border border-emerald-500/40 rounded-2xl glow-subtle">
-                        <div class="grid md:grid-cols-2 gap-6 items-start">
-                            <div>
-                                <div class="flex items-center gap-3 mb-3">
-                                    <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
-                                        <i data-lucide="award" class="w-6 h-6"></i>
-                                    </div>
-                                    <div>
-                                        <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Tu perfil analizado:</span>
-                                        <h4 id="profileTitle" class="text-xl font-extrabold text-white">Inversor Moderado</h4>
-                                    </div>
+                        <form id="quizForm" class="space-y-8">
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">1. ¿Cuál es tu horizonte temporal previsto para mantener tus inversiones?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p1" value="1" required class="accent-emerald-500"> Menos de 3 años
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p1" value="2" class="accent-emerald-500"> Entre 3 y 8 años
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p1" value="3" class="accent-emerald-500"> Más de 8-10 años
+                                    </label>
                                 </div>
-                                <p id="profileDesc" class="text-xs text-gray-300 leading-relaxed">
-                                    Buscas un equilibrio óptimo entre rentabilidad y riesgo. Tu mejor aliada es la inversión pasiva diversificada a largo plazo.
-                                </p>
-                                <div class="mt-4 p-3.5 bg-cardBg border border-borderBg rounded-xl">
-                                    <span class="text-xs font-bold text-emerald-400 block mb-1.5 flex items-center gap-1.5">
-                                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> Activos recomendados para ti:
-                                    </span>
-                                    <p id="profileAssets" class="text-xs text-gray-300 leading-relaxed">
-                                        Cuentas remuneradas, fondos indexados globales mixtos y renta fija de calidad a medio plazo.
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">2. Si tu cartera de inversión pierde un 20% en pocos meses, ¿qué harías?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p2" value="1" required class="accent-emerald-500"> Vender todo por pánico
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p2" value="2" class="accent-emerald-500"> Mantener sin hacer nada
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p2" value="3" class="accent-emerald-500"> Comprar más aprovechando rebajas
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">3. ¿Cuál es tu objetivo principal al empezar a invertir?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p3" value="1" required class="accent-emerald-500"> Proteger capital de la inflación
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p3" value="2" class="accent-emerald-500"> Crecimiento constante y equilibrado
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p3" value="3" class="accent-emerald-500"> Máxima rentabilidad a largo plazo
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">4. ¿Qué porcentaje de tus ahorros totales vas a destinar a la inversión?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p4" value="1" required class="accent-emerald-500"> Una parte muy pequeña (&lt;15%)
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p4" value="2" class="accent-emerald-500"> Entre un 15% y un 50%
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p4" value="3" class="accent-emerald-500"> La gran mayoría de mis ahorros (&gt;50%)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">5. ¿Tienes cubierto un fondo de emergencia para imprevistos?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p5" value="1" required class="accent-emerald-500"> No tengo colchón de emergencia
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p5" value="2" class="accent-emerald-500"> Tengo algo ahorrado (1-3 meses)
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p5" value="3" class="accent-emerald-500"> Sí, más de 3-6 meses asegurados
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">6. ¿Cómo valoras tus conocimientos actuales sobre mercados financieros?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p6" value="1" required class="accent-emerald-500"> Nulos o básicos
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p6" value="2" class="accent-emerald-500"> Intermedios
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p6" value="3" class="accent-emerald-500"> Avanzados
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">7. ¿Qué tipo de activos prefieres para tu estrategia inicial?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p7" value="1" required class="accent-emerald-500"> Cuentas remuneradas y letras
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p7" value="2" class="accent-emerald-500"> Fondos indexados globales
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p7" value="3" class="accent-emerald-500"> 100% Acciones / ETFs
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">8. ¿Con qué frecuencia planeas revisar tus inversiones?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p8" value="1" required class="accent-emerald-500"> Todos los días
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p8" value="2" class="accent-emerald-500"> Una vez al mes
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p8" value="3" class="accent-emerald-500"> Casi nunca
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">9. ¿Dependes de los ingresos generados por tus inversiones hoy?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p9" value="1" required class="accent-emerald-500"> Sí, necesito rendimiento
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p9" value="2" class="accent-emerald-500"> Parcialmente
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p9" value="3" class="accent-emerald-500"> No, vivo de mi trabajo/estudios
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">10. ¿Cuál es tu grado de estabilidad laboral o de ingresos?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p10" value="1" required class="accent-emerald-500"> Inciertos
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p10" value="2" class="accent-emerald-500"> Moderadamente estables
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p10" value="3" class="accent-emerald-500"> Totalmente estables
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">11. Si te ofrecen una inversión con 50% de ganar el doble o perder la mitad, ¿qué haces?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p11" value="1" required class="accent-emerald-500"> Ni hablar
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p11" value="2" class="accent-emerald-500"> Cantidad muy pequeña
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p11" value="3" class="accent-emerald-500"> Oportunidad lógica
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué importancia le das a la liquidez (retirar en 48 horas)?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p12" value="1" required class="accent-emerald-500"> Máxima
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p12" value="2" class="accent-emerald-500"> Moderada
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p12" value="3" class="accent-emerald-500"> Mínima, no lo tocaré en años
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">13. ¿Prefieres rentabilidades fijas o variables ligadas al mercado?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p13" value="1" required class="accent-emerald-500"> 100% Fija
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p13" value="2" class="accent-emerald-500"> Mixta
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p13" value="3" class="accent-emerald-500"> Variable a largo plazo
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">14. ¿Te genera estrés pensar en que tus inversiones fluctúen en bolsa?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p14" value="1" required class="accent-emerald-500"> Muchísimo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p14" value="2" class="accent-emerald-500"> Un poco al principio
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p14" value="3" class="accent-emerald-500"> Nada
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pb-2">
+                                <h3 class="text-sm font-bold text-white mb-3">15. ¿Cuál es tu filosofía general ante el ahorro y el dinero?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p15" value="1" required class="accent-emerald-500"> El dinero en mano y seguro
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p15" value="2" class="accent-emerald-500"> Ahorro constante con cabeza
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="p15" value="3" class="accent-emerald-500"> Inversión activa
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-4 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                <span>Calcular Mi Perfil y Ubicación</span>
+                            </button>
+                        </form>
+
+                        <div id="quizResult" class="hidden mt-8 p-6 bg-darkBg border border-emerald-500/40 rounded-2xl glow-subtle">
+                            <div class="grid md:grid-cols-2 gap-6 items-start">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
+                                            <i data-lucide="award" class="w-6 h-6"></i>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Tu perfil analizado:</span>
+                                            <h4 id="profileTitle" class="text-xl font-extrabold text-white">Inversor Moderado</h4>
+                                        </div>
+                                    </div>
+                                    <p id="profileDesc" class="text-xs text-gray-300 leading-relaxed">
+                                        Buscas un equilibrio óptimo entre rentabilidad y riesgo. Tu mejor aliada es la inversión pasiva diversificada a largo plazo.
                                     </p>
+                                    <div class="mt-4 p-3.5 bg-cardBg border border-borderBg rounded-xl">
+                                        <span class="text-xs font-bold text-emerald-400 block mb-1.5 flex items-center gap-1.5">
+                                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Activos recomendados para ti:
+                                        </span>
+                                        <p id="profileAssets" class="text-xs text-gray-300 leading-relaxed">
+                                            Cuentas remuneradas, fondos indexados globales mixtos y renta fija de calidad a medio plazo.
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-borderBg flex flex-col gap-2">
+                                        <button onclick="switchTab('inicio')" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+                                            <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Ir a la calculadora en Inicio
+                                        </button>
+                                        <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
+                                           class="inline-block text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2 rounded-xl transition duration-200 text-xs shadow-md shadow-emerald-500/20">
+                                           Abrir cuenta remunerada en MyInvestor (+25€ gratis)
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="mt-4 pt-4 border-t border-borderBg flex flex-col gap-2">
-                                    <button onclick="switchTab('inicio')" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
-                                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Ir a la calculadora en Inicio
-                                    </button>
-                                    <a href="https://newapp.myinvestor.es/do/SIGNUP?promotionalCode=GXIVR" target="_blank" rel="noopener noreferrer" 
-                                       class="inline-block text-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-4 py-2 rounded-xl transition duration-200 text-xs shadow-md shadow-emerald-500/20">
-                                       Abrir cuenta remunerada en MyInvestor (+25€ gratis)
-                                    </a>
+                                <div class="bg-cardBg border border-borderBg p-4 rounded-xl flex flex-col items-center justify-center">
+                                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Brújula de Perfil de Riesgo</span>
+                                    <div class="relative w-full h-32 bg-darkBg border border-borderBg rounded-lg flex items-center justify-between px-4 overflow-hidden">
+                                        <div class="absolute inset-x-6 top-1/2 h-0.5 bg-borderBg -translate-y-1/2"></div>
+                                        <span class="absolute left-3 bottom-2 text-[10px] text-gray-500 font-medium">Conservador</span>
+                                        <span class="absolute right-3 bottom-2 text-[10px] text-gray-500 font-medium">Dinámico</span>
+                                        <span class="absolute left-1/2 -translate-x-1/2 bottom-2 text-[10px] text-gray-400 font-medium">Moderado</span>
+                                        <div id="compassDot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 bg-emerald-400 rounded-full border-4 border-darkBg shadow-lg shadow-emerald-500/50 transition-all duration-700 ease-out" style="left: 50%;"></div>
+                                    </div>
+                                    <span id="compassLabel" class="text-[11px] text-emerald-400 font-bold mt-3">Ubicación: Centro del espectro</span>
                                 </div>
                             </div>
-                            <div class="bg-cardBg border border-borderBg p-4 rounded-xl flex flex-col items-center justify-center">
-                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Brújula de Perfil de Riesgo</span>
-                                <div class="relative w-full h-32 bg-darkBg border border-borderBg rounded-lg flex items-center justify-between px-4 overflow-hidden">
-                                    <div class="absolute inset-x-6 top-1/2 h-0.5 bg-borderBg -translate-y-1/2"></div>
-                                    <span class="absolute left-3 bottom-2 text-[10px] text-gray-500 font-medium">Conservador</span>
-                                    <span class="absolute right-3 bottom-2 text-[10px] text-gray-500 font-medium">Dinámico</span>
-                                    <span class="absolute left-1/2 -translate-x-1/2 bottom-2 text-[10px] text-gray-400 font-medium">Moderado</span>
-                                    <div id="compassDot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 bg-emerald-400 rounded-full border-4 border-darkBg shadow-lg shadow-emerald-500/50 transition-all duration-700 ease-out" style="left: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-TEST 2: TEST DE CONOCIMIENTOS DE BOLSA (NIVEL INTERMEDIO-AVANZADO, OPCIONES SUTILES) -->
+                <div id="subtest-content-conocimientos" class="subtest-content hidden">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle">
+                        <div class="mb-6 text-center">
+                            <h3 class="text-xl font-extrabold text-white">Test de Nivel Bolsa Avanzado (15 Preguntas)</h3>
+                            <p class="text-xs text-gray-400 mt-1">Preguntas de nivel intermedio sobre bolsa, valoración, fiscalidad e inversión pasiva con opciones plausibles.</p>
+                        </div>
+                        <form id="knowledgeQuizForm" class="space-y-8">
+                            <!-- P1 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">1. ¿Cuál es la principal ventaja matemática del interés compuesto frente al simple a largo plazo?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq1" value="wrong" required class="accent-emerald-500"> Genera rendimientos lineales constantes multiplicando el capital inicial por los años transcurridos
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq1" value="correct" class="accent-emerald-500"> Calcula los beneficios acumulados aplicando el porcentaje sobre el principal y los intereses generados previamente
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq1" value="wrong" class="accent-emerald-500"> Descuenta automáticamente la inflación subyacente para proteger el poder adquisitivo real
+                                    </label>
                                 </div>
-                                <span id="compassLabel" class="text-[11px] text-emerald-400 font-bold mt-3">Ubicación: Centro del espectro</span>
+                            </div>
+                            <!-- P2 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">2. ¿Por qué los fondos indexados globales suelen superar a la gran mayoría de fondos de gestión activa a 15-20 años?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq2" value="wrong" required class="accent-emerald-500"> Porque utilizan algoritmos de inteligencia artificial avanzados para predecir caídas bursátiles
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq2" value="correct" class="accent-emerald-500"> Debido principalmente a sus menores comisiones de gestión y a la diversificación amplia sin sesgo sectorial
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq2" value="wrong" class="accent-emerald-500"> Porque están totalmente garantizados por los bancos centrales frente a cualquier crisis sistémica
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P3 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">3. Si una empresa cotiza con un PER (Price-to-Earnings) de 30, ¿qué nos indica de forma general?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq3" value="correct" required class="accent-emerald-500"> Que los inversores están pagando 30 euros por cada euro de beneficio neto anual generado por la compañía
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq3" value="wrong" class="accent-emerald-500"> Que la empresa tiene un nivel de endeudamiento equivalente a 30 veces su patrimonio neto contable
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq3" value="wrong" class="accent-emerald-500"> Que reparte un dividendo anual constante del 30% sobre el valor nominal de su acción
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P4 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">4. ¿Qué ventaja fiscal clave tienen los fondos de inversión en España frente a las acciones individuales?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq4" value="wrong" required class="accent-emerald-500"> Permiten deducir las pérdidas en el IRPF sin necesidad de vender los títulos en el mercado
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq4" value="correct" class="accent-emerald-500"> El traspaso de capital entre fondos está exento de tributación inmediata (diferimiento fiscal)
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq4" value="wrong" class="accent-emerald-500"> Los dividendos cobrados en su interior están completamente libres de retención en origen
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P5 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">5. ¿Cuál es el criterio financiero recomendado para calcular el importe óptimo de un fondo de emergencia?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq5" value="wrong" required class="accent-emerald-500"> El equivalente al 100% de los ingresos brutos anuales esperados por tu trabajo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq5" value="correct" class="accent-emerald-500"> De 3 a 6 meses de los gastos esenciales fijos necesarios para la subsistencia
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq5" value="wrong" class="accent-emerald-500"> La mitad exacta del capital total que se planea destinar a la renta variable
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P6 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">6. ¿Qué busca conseguir un inversor al diversificar su cartera en diferentes sectores económicos?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq6" value="wrong" required class="accent-emerald-500"> Eliminar por completo el riesgo de mercado y asegurar una rentabilidad fija anual
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq6" value="correct" class="accent-emerald-500"> Reducir el riesgo específico o no sistemático sin sacrificar la rentabilidad esperada a largo plazo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq6" value="wrong" class="accent-emerald-500"> Aumentar la volatilidad general para obtener mayores ganancias en el corto plazo
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P7 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">7. Cuando los bancos centrales deciden subir los tipos de interés oficiales, ¿cómo suele reaccionar el precio de los bonos ya existentes?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq7" value="correct" required class="accent-emerald-500"> Su precio baja, ya que los nuevos bonos ofrecen mayor rentabilidad y los antiguos pierden atractivo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq7" value="wrong" class="accent-emerald-500"> Su precio sube de forma proporcional para compensar la subida del coste de la vida
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq7" value="wrong" class="accent-emerald-500"> Su cotización no experimenta ninguna alteración al tratarse de un activo de renta fija garantizada
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P8 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">8. ¿Qué mide exactamente el indicador financiero conocido como EBITDA?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq8" value="wrong" required class="accent-emerald-500"> El beneficio neto definitivo que recibe el accionista en forma de dividendos anuales
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq8" value="correct" class="accent-emerald-500"> El resultado bruto de explotación antes de deducir intereses, impuestos, depreciaciones y amortizaciones
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq8" value="wrong" class="accent-emerald-500"> La cantidad real de caja libre disponible para acometer nuevas inversiones estratégicas
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P9 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">9. En el contexto de los mercados bursátiles, ¿cómo se define la volatilidad?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq9" value="wrong" required class="accent-emerald-500"> La probabilidad matemática exacta de que una empresa quiebre en un periodo de crisis
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq9" value="correct" class="accent-emerald-500"> La medida de la frecuencia e intensidad de las fluctuaciones de precio de un activo en el tiempo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq9" value="wrong" class="accent-emerald-500"> El porcentaje de pérdidas netas acumuladas tras una corrección fuerte de mercado
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P10 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">10. Si mantienes tus ahorros en una cuenta corriente al 0% de interés con una inflación anual del 3%, ¿qué ocurre?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq10" value="wrong" required class="accent-emerald-500"> Tu dinero se revaloriza automáticamente gracias al ajuste general del IPC económico
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq10" value="correct" class="accent-emerald-500"> Pierdes poder adquisitivo real, ya que puedes comprar menos bienes y servicios con la misma cantidad
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq10" value="wrong" class="accent-emerald-500"> El banco te compensa la pérdida con una bonificación fiscal automática a final de año
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P11 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">11. ¿Cuál es la diferencia fundamental en la naturaleza jurídica entre poseer una acción y poseer un bono?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq11" value="correct" required class="accent-emerald-500"> La acción otorga la condición de socio y propietario parcial; el bono confiere la condición de acreedor
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq11" value="wrong" class="accent-emerald-500"> La acción garantiza un cupón periódico obligatorio; el bono depende de los beneficios de la empresa
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq11" value="wrong" class="accent-emerald-500"> El bono cotiza obligatoriamente en mercados regulados y la acción solo de forma extrabursátil
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P12 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">12. Al producirse el reparto de un dividendo en efectivo por parte de una empresa cotizada, ¿qué sucede en el mercado?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq12" value="correct" required class="accent-emerald-500"> La cotización de la acción se ajusta a la baja descontando el importe exacto del dividendo repartido
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq12" value="wrong" class="accent-emerald-500"> El valor bursátil global de la empresa aumenta automáticamente debido a la entrada de liquidez
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq12" value="wrong" class="accent-emerald-500"> Se genera una plusvalía inmediata exenta de impuestos para todos los accionistas minoritarios
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P13 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">13. ¿En qué consiste la estrategia de inversión conocida como DCA (Dollar Cost Averaging)?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq13" value="wrong" required class="accent-emerald-500"> Invertir todo el capital disponible de golpe en el momento de mayor caída bajista de la bolsa
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq13" value="correct" class="accent-emerald-500"> Realizar aportaciones periódicas de importe fijo de forma constante, independientemente de cómo fluctúe el mercado
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq13" value="wrong" class="accent-emerald-500"> Comprar únicamente activos denominados en dólares estadounidenses para cubrir el riesgo divisa
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P14 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">14. ¿A qué hace referencia el concepto de "riesgo sistemático" en finanzas?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq14" value="wrong" required class="accent-emerald-500"> Al riesgo derivado de una mala gestión interna por parte del equipo directivo de una compañía
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq14" value="correct" class="accent-emerald-500"> Al riesgo inherente a todo el mercado o sistema económico general que no se puede eliminar diversificando
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq14" value="wrong" class="accent-emerald-500"> Al peligro de que el bróker intermediario sufra un impago técnico regulado por la CNMV
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P15 -->
+                            <div class="pb-2">
+                                <h3 class="text-sm font-bold text-white mb-3">15. ¿Por qué se aconseja un horizonte temporal largo (más de 10 años) al invertir en renta variable?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq15" value="wrong" required class="accent-emerald-500"> Porque las comisiones de los fondos se reducen obligatoriamente a partir de la décima année
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq15" value="correct" class="accent-emerald-500"> Porque permite absorber con mayor probabilidad la volatilidad a corto plazo y beneficiarse del crecimiento secular
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="kq15" value="wrong" class="accent-emerald-500"> Porque la normativa fiscal prohíbe vender acciones antes de ese plazo sin una penalización severa
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-4 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                <span>Calificar Nivel de Bolsa</span>
+                            </button>
+                        </form>
+
+                        <div id="knowledgeResult" class="hidden mt-8 p-6 bg-darkBg border border-emerald-500/40 rounded-2xl glow-subtle space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
+                                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Tu nivel evaluado:</span>
+                                    <h4 id="knowledgeTitle" class="text-xl font-extrabold text-white">Nivel Intermedio</h4>
+                                </div>
+                            </div>
+                            <p id="knowledgeDesc" class="text-xs text-gray-300 leading-relaxed">
+                                Tienes una sólida comprensión de los conceptos financieros avanzados.
+                            </p>
+                            <div class="p-4 bg-cardBg border border-borderBg rounded-xl space-y-2">
+                                <span class="text-xs font-bold text-emerald-400 block">Desglose de tu puntuación:</span>
+                                <span id="knowledgeScoreText" class="text-sm font-bold text-white block">Has acertado X de 15 preguntas.</span>
+                                <p class="text-[11px] text-gray-400">Repasa nuestro glosario y guías para dominar por completo el análisis bursátil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-TEST 3: PSICOLOGÍA Y SESGOS COGNITIVOS (NIVEL INTERMEDIO, OPCIONES SUTILES) -->
+                <div id="subtest-content-psicologia" class="subtest-content hidden">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle">
+                        <div class="mb-6 text-center">
+                            <h3 class="text-xl font-extrabold text-white">Test de Psicología y Sesgos del Inversor (15 Preguntas)</h3>
+                            <p class="text-xs text-gray-400 mt-1">Evalúa cómo las emociones y trampas mentales influyen en tus decisiones con opciones de dificultad equilibrada.</p>
+                        </div>
+                        <form id="psychologyQuizForm" class="space-y-8">
+                            <!-- P1 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">1. ¿Cómo se manifiesta la "aversión a la pérdida" en el comportamiento de un inversor?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq1" value="correct" required class="accent-emerald-500"> El impacto psicológico negativo de una pérdida económica se percibe con mayor intensidad que la alegría de una ganancia equivalente
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq1" value="wrong" class="accent-emerald-500"> La negativa sistemática a invertir en activos que hayan registrado beneficios en el trimestre anterior
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq1" value="wrong" class="accent-emerald-500"> La tendencia automática a contratar seguros privados para cubrir todas las posiciones bursátiles
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P2 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">2. ¿Qué caracteriza al conocido como "efecto disposición" en la gestión de carteras?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq2" value="wrong" required class="accent-emerald-500"> Vender rápidamente las acciones que caen de precio para evitar mirar los gráficos diarios
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq2" value="correct" class="accent-emerald-500"> Vender de forma prematura los valores con ganancias y mantener demasiado tiempo los valores con pérdidas
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq2" value="wrong" class="accent-emerald-500"> Modificar la disposición de los activos según la recomendación de los medios de comunicación
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P3 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">3. ¿De qué forma afecta el sesgo de confirmación a la hora de analizar una inversión?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq3" value="correct" required class="accent-emerald-500"> Impulsa a buscar y valorar exclusivamente los datos que apoyan tu opinión previa, ignorando las señales contrarias
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq3" value="wrong" class="accent-emerald-500"> Obliga a confirmar la identidad del titular antes de ejecutar cada orden de compra en el bróker
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq3" value="wrong" class="accent-emerald-500"> Requiere la validación previa de un asesor financiero colegiado para validar la operación
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P4 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">4. ¿Qué impulsa al inversor a actuar bajo el efecto rebaño o FOMO (Fear Of Missing Out)?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq4" value="wrong" required class="accent-emerald-500"> La planificación metódica y el rebalanceo automatizado de la cartera a final de año
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq4" value="correct" class="accent-emerald-500"> La presión social y el impulso de comprar un activo solo porque está subiendo fuertemente y todos hablan de él
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq4" value="wrong" class="accent-emerald-500"> El miedo a perder las rebajas fiscales ofrecidas por los fondos indexados nacionales
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P5 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">5. ¿Qué problema principal genera el sesgo de exceso de confianza en los inversores particulares?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq5" value="wrong" required class="accent-emerald-500"> Provoca que dejen todo su dinero en cuentas corrientes sin obtener ninguna rentabilidad
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq5" value="correct" class="accent-emerald-500"> Lleva a infravalorar el riesgo real y a sobreestimar la capacidad personal para batir al mercado constantemente
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq5" value="wrong" class="accent-emerald-500"> Impide que se puedan realizar operaciones de compraventa fuera del horario habitual de bolsa
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P6 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">6. ¿En qué consiste el sesgo de anclaje cuando se evalúa el precio de una acción?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq6" value="correct" required class="accent-emerald-500"> Quedarse fijado mentalmente en un precio de referencia inicial (como el precio de compra) al valorar el activo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq6" value="wrong" class="accent-emerald-500"> Anclar los fondos de inversión a una entidad bancaria concreta para evitar comisiones de transferencia
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq6" value="wrong" class="accent-emerald-500"> Tomar como referencia absoluta los máximos históricos alcanzados por el índice general bursátil
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P7 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">7. ¿Cómo se define el concepto de contabilidad mental en finanzas conductuales?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq7" value="wrong" required class="accent-emerald-500"> La disciplina de anotar diariamente cada movimiento de ingresos y gastos en una aplicación móvil
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq7" value="correct" class="accent-emerald-500"> La tendencia a categorizar y tratar el dinero de manera diferente según su origen, asignándole percepciones de riesgo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq7" value="wrong" class="accent-emerald-500"> El cálculo mental rápido de los intereses compuestos sin la ayuda de herramientas digitales o calculadoras
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P8 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">8. ¿Cómo interviene la falacia de coste hundido en una mala decisión de inversión?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq8" value="correct" required class="accent-emerald-500"> Conduce a mantener una posición perdedora solo por el dinero o tiempo ya invertido, en lugar de evaluar su futuro
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq8" value="wrong" class="accent-emerald-500"> Obliga a pagar las comisiones bancarias acumuladas de un fondo antes de poder traspasarlo de entidad
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq8" value="wrong" class="accent-emerald-500"> Impide vender un activo en máximos por el miedo a tener que pagar impuestos directos a Hacienda
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P9 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">9. ¿Qué provoca el sesgo de disponibilidad en la toma de decisiones financieras?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq9" value="correct" required class="accent-emerald-500"> Dar más importancia a los riesgos o escenarios que nos vienen fácilmente a la memoria por ser recientes o llamativos
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq9" value="wrong" class="accent-emerald-500"> Comprar únicamente aquellos activos que tienen liquidez inmediata disponible en menos de 24 horas
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq9" value="wrong" class="accent-emerald-500"> Basar todas las decisiones de inversión en la disponibilidad horaria personal del propio inversor
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P10 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">10. ¿Qué describe el efecto dotación en relación con la posesión de activos?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq10" value="wrong" required class="accent-emerald-500"> La obligación de dotar un fondo de reserva antes de empezar a invertir dinero en bolsa
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq10" value="correct" class="accent-emerald-500"> La tendencia psicológica a sobrevalorar un activo simplemente porque ya forma parte de nuestra propiedad
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq10" value="wrong" class="accent-emerald-500"> El derecho a recibir dotaciones periódicas de dividendos preferentes en efectivo cada trimestre
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P11 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">11. ¿De qué manera influye el sesgo de recencia en el comportamiento del inversor?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq11" value="correct" required class="accent-emerald-500"> Hace creer que las condiciones actuales del mercado (alcistas o bajistas) se mantendrán indefinidamente
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq11" value="wrong" class="accent-emerald-500"> Obliga a revisar los estados contables de la empresa únicamente durante el último trimestre fiscal
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq11" value="wrong" class="accent-emerald-500"> Limita las operaciones de inversión a los días laborables más recientes y activos de la semana
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P12 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué genera la aversión al remordimiento en el ámbito de las inversiones bursátiles?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq12" value="wrong" required class="accent-emerald-500"> Arrepentirse públicamente de no haber vendido un activo en su máximo histórico bursátil previo
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq12" value="correct" class="accent-emerald-500"> Posponer la toma de decisiones lógicas por el miedo intenso a equivocarse y sentir culpa por el resultado
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq12" value="wrong" class="accent-emerald-500"> Reclamar judicialmente al banco por una mala recomendación financiera pasada ya firmada
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P13 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">13. ¿En qué consiste el efecto encuadre al valorar una propuesta de inversión?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq13" value="correct" required class="accent-emerald-500"> Reaccionar de manera diferente ante una misma opción según cómo se formulen sus datos (ej: 90% éxito vs 10% fracaso)
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq13" value="wrong" class="accent-emerald-500"> Enmarcar físicamente los títulos impresos de propiedad de las acciones compradas en el bróker
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq13" value="wrong" class="accent-emerald-500"> Limitar el presupuesto anual de inversión a un marco temporal cerrado de doce meses exactos
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P14 -->
+                            <div class="border-b border-borderBg/60 pb-6">
+                                <h3 class="text-sm font-bold text-white mb-3">14. ¿Qué situación define la parálisis por análisis ante una oportunidad financiera?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq14" value="wrong" required class="accent-emerald-500"> Analizar los balances corporativos durante más de un año fiscal completo de forma obligatoria
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq14" value="correct" class="accent-emerald-500"> Demorar o evitar indefinidamente la toma de decisiones por buscar información perfecta e inalcanzable
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq14" value="wrong" class="accent-emerald-500"> Sufrir un bloqueo mental al intentar calcular la rentabilidad ponderada de una cartera propia
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- P15 -->
+                            <div class="pb-2">
+                                <h3 class="text-sm font-bold text-white mb-3">15. ¿A qué se refiere la llamada "ilusión de control" en los mercados financieros?</h3>
+                                <div class="grid gap-2.5 sm:grid-cols-3">
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq15" value="correct" required class="accent-emerald-500"> A la creencia errónea de que se puede influir o predecir con certeza en los movimientos aleatorios mediante análisis
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq15" value="wrong" class="accent-emerald-500"> Al control estricto que ejerce la CNMV sobre las comisiones aplicadas por los fondos indexados globales
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
+                                        <input type="radio" name="pq15" value="wrong" class="accent-emerald-500"> A la capacidad del inversor para controlar los costes de transacción a través de brókers online baratos
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold py-4 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                <span>Calificar Perfil Psicológico</span>
+                            </button>
+                        </form>
+
+                        <div id="psychologyResult" class="hidden mt-8 p-6 bg-darkBg border border-emerald-500/40 rounded-2xl glow-subtle space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl">
+                                    <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Tu perfil psicológico evaluado:</span>
+                                    <h4 id="psychologyTitle" class="text-xl font-extrabold text-white">Inversor Racional Consciente</h4>
+                                </div>
+                            </div>
+                            <p id="psychologyDesc" class="text-xs text-gray-300 leading-relaxed">
+                                Tienes una gran conciencia sobre los sesgos emocionales que afectan al inversor común, lo que te protege de caer en pánico o euforia irracional.
+                            </p>
+                            <div class="p-4 bg-cardBg border border-borderBg rounded-xl space-y-2">
+                                <span class="text-xs font-bold text-emerald-400 block">Desglose de tu puntuación:</span>
+                                <span id="psychologyScoreText" class="text-sm font-bold text-white block">Has respondido correctamente X de 15 preguntas.</span>
+                                <p class="text-[11px] text-gray-400">Mantener la disciplina y un plan automatizado (DCA) es tu mejor escudo contra los sesgos cognitivos.</p>
                             </div>
                         </div>
                     </div>
@@ -1250,7 +1794,7 @@
                                     <span class="text-xs text-emerald-400 font-semibold block mt-0.5">Cofundador | 19 años</span>
                                 </div>
                                 <p class="text-xs text-gray-300 leading-relaxed">
-                                    Interesado en profundizar y dominar las finanzas corporativas. Representa el motor de aprendizaje continuo del grupo, absorbiendo cada detalle del análisis fundamental para aportar cada día mas valor al proyecto. Empezó a invertir activamente a los 18 años mientras cursa sus estudios en la universidad. Formado con el programa <strong>Invertir desde Cero</strong> de Fernando Sánchez, su gran referente en finanzas personales.
+                                    Interesado incesantemente en profundizar y dominar las finanzas corporativas. Representa el motor de aprendizaje continuo del grupo, absorbiendo cada detalle del análisis fundamental para aportar cada día mas valor al proyecto. Empezó a invertir activamente a los 18 años mientras cursa sus estudios en la universidad. Formado con el programa <strong>Invertir desde Cero</strong> de Fernando Sánchez, su gran referente en finanzas personales.
                                 </p>
                             </div>
                             <div class="pt-3 border-t border-borderBg/60 text-[11px] text-gray-400 flex items-center gap-1.5">
@@ -1348,7 +1892,7 @@
                     <i data-lucide="shield-alert" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
                     <div class="space-y-2">
                         <span class="font-bold text-white text-sm block">Aviso Legal Regulatorio y Descargo de Responsabilidad (CNMV)</span>
-                        <p class="leading-relaxed text-gray-400">El contenido presente en esta plataforma web tiene una finalidad exclusivamente <strong>divulgativa, informativa y pedagógica</strong> sobre conceptos básicos de economía y finanzas personales. <strong>En ningún caso constituye recomendación explícita de compra o venta de ningún activo financiero, ni asesoramiento personalizado de inversión</strong> en los términos previstos por la normativa vigente regulada por la Comisión Nacional del Mercado de Valores (CNMV).
+                        <p class="leading-relaxed text-gray-400">El contenido presente en esta plataforma web tiene una finalidad exclusivamente <strong>divulgativa, informativa y pedagógica</strong> sobre conceptos básicos de economía y finanzas personales. <strong>En ningún caso constituye recomendación explícita de compra o venta de ningún activo financiero, ni asesoramiento personalizado de inversión</strong> en los términos previstos por la normativa vigente regulada por la Comisión Nacional del Mercado de Valores (CNMV).</p>
                         <p class="leading-relaxed text-gray-400">Las rentabilidades pasadas no garantizan rentabilidades futuras. Las simulaciones realizadas en la calculadora son meras proyecciones teóricas basadas en supuestos numéricos y no representan promesas de rendimiento real. Antes de tomar cualquier decisión de inversión, te recomendamos consultar con profesionales financieros acreditados.</p>
                     </div>
                 </div>
@@ -1411,6 +1955,22 @@
             if(activeBtn) {
                 activeBtn.classList.remove('text-gray-400');
                 activeBtn.classList.add('bg-emerald-500', 'text-black');
+            }
+        }
+
+        // LÓGICA SUB-TESTS (PERFIL VS CONOCIMIENTOS VS PSICOLOGÍA)
+        function selectSubTest(testId) {
+            document.querySelectorAll('.subtest-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('subtest-content-' + testId).classList.remove('hidden');
+
+            document.querySelectorAll('.subtest-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-black', 'shadow-lg', 'shadow-emerald-500/20');
+                btn.classList.add('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
+            });
+            const activeBtn = document.getElementById('btn-subtest-' + testId);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
+                activeBtn.classList.add('bg-emerald-500', 'text-black', 'shadow-lg', 'shadow-emerald-500/20');
             }
         }
 
@@ -1801,7 +2361,7 @@
             }
         }
 
-        // --- QUIZ LOGIC ---
+        // --- QUIZ LOGIC (PERFIL) ---
         const quizForm = document.getElementById('quizForm');
         const quizResult = document.getElementById('quizResult');
         const profileTitle = document.getElementById('profileTitle');
@@ -1843,6 +2403,78 @@
 
                 quizResult.classList.remove('hidden');
                 quizResult.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // --- KNOWLEDGE QUIZ LOGIC (CONOCIMIENTOS DE BOLSA) ---
+        const knowledgeQuizForm = document.getElementById('knowledgeQuizForm');
+        const knowledgeResult = document.getElementById('knowledgeResult');
+        const knowledgeTitle = document.getElementById('knowledgeTitle');
+        const knowledgeDesc = document.getElementById('knowledgeDesc');
+        const knowledgeScoreText = document.getElementById('knowledgeScoreText');
+
+        if(knowledgeQuizForm) {
+            knowledgeQuizForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let correctCount = 0;
+                for (let i = 1; i <= 15; i++) {
+                    const selected = knowledgeQuizForm.querySelector(`input[name="kq${i}"]:checked`);
+                    if (selected && selected.value === 'correct') {
+                        correctCount++;
+                    }
+                }
+
+                knowledgeScoreText.textContent = `Has acertado ${correctCount} de 15 preguntas.`;
+
+                if (correctCount <= 6) {
+                    knowledgeTitle.textContent = "Inversor Principiante 🌱";
+                    knowledgeDesc.textContent = "Los conceptos de bolsa y mercado suponen un reto. Te recomendamos repasar nuestro glosario y guías educativas.";
+                } else if (correctCount <= 11) {
+                    knowledgeTitle.textContent = "Inversor Intermedio 📈";
+                    knowledgeDesc.textContent = "Tienes una base muy sólida y entiendes bien el funcionamiento de los mercados y la valoración básica.";
+                } else {
+                    knowledgeTitle.textContent = "Inversor Avanzado 🧠";
+                    knowledgeDesc.textContent = "¡Excelente! Demuestras un dominio muy notable de la operativa bursátil, fiscalidad y métricas financieras.";
+                }
+
+                knowledgeResult.classList.remove('hidden');
+                knowledgeResult.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // --- PSYCHOLOGY QUIZ LOGIC (PSICOLOGÍA Y SESGOS) ---
+        const psychologyQuizForm = document.getElementById('psychologyQuizForm');
+        const psychologyResult = document.getElementById('psychologyResult');
+        const psychologyTitle = document.getElementById('psychologyTitle');
+        const psychologyDesc = document.getElementById('psychologyDesc');
+        const psychologyScoreText = document.getElementById('psychologyScoreText');
+
+        if(psychologyQuizForm) {
+            psychologyQuizForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let correctCount = 0;
+                for (let i = 1; i <= 15; i++) {
+                    const selected = psychologyQuizForm.querySelector(`input[name="pq${i}"]:checked`);
+                    if (selected && selected.value === 'correct') {
+                        correctCount++;
+                    }
+                }
+
+                psychologyScoreText.textContent = `Has respondido correctamente ${correctCount} de 15 preguntas.`;
+
+                if (correctCount <= 6) {
+                    psychologyTitle.textContent = "Vulnerable a Sesgos Emocionales ⚠️";
+                    psychologyDesc.textContent = "Tus decisiones de inversión corren el riesgo de verse arrastradas por impulsos, pánico o euforia colectiva. Es vital automatizar tus aportaciones (DCA).";
+                } else if (correctCount <= 11) {
+                    psychologyTitle.textContent = "Inversor Racional Consciente ⚖️";
+                    psychologyDesc.textContent = "Reconoces la mayoría de trampas mentales y mantienes una disciplina notable frente a la volatilidad del mercado.";
+                } else {
+                    psychologyTitle.textContent = "Maestro de la Disciplina Emocional 🧘‍♂️";
+                    psychologyDesc.textContent = "¡Excepcional! Comprendes a la perfección la psicología conductual, lo que te inmuniza prácticamente frente al ruido y el pánico bursátil.";
+                }
+
+                psychologyResult.classList.remove('hidden');
+                psychologyResult.scrollIntoView({ behavior: 'smooth' });
             });
         }
 
