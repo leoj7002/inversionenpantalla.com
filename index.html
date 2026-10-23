@@ -1085,6 +1085,13 @@
                                 <span id="knowledgeScoreText" class="text-sm font-bold text-white block">Has acertado X de 15 preguntas.</span>
                                 <p class="text-[11px] text-gray-400">Repasa nuestro glosario y guías para dominar por completo el análisis bursátil.</p>
                             </div>
+                            <!-- Preguntas falladas Test 2 -->
+                            <div id="knowledgeFailedContainer" class="space-y-3 mt-4 text-left hidden border-t border-borderBg pt-4">
+                                <span class="text-xs font-bold text-amber-400 block flex items-center gap-1.5">
+                                    <i data-lucide="alert-circle" class="w-4 h-4"></i> Preguntas falladas y explicaciones para corregir:
+                                </span>
+                                <div id="knowledgeFailedList" class="space-y-2 text-xs"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1346,6 +1353,13 @@
                                 <span class="text-xs font-bold text-emerald-400 block">Desglose de tu puntuación:</span>
                                 <span id="psychologyScoreText" class="text-sm font-bold text-white block">Has respondido correctamente X de 15 preguntas.</span>
                                 <p class="text-[11px] text-gray-400">Mantener la disciplina y un plan automatizado (DCA) es tu mejor escudo contra los sesgos cognitivos.</p>
+                            </div>
+                            <!-- Preguntas falladas Test 3 -->
+                            <div id="psychologyFailedContainer" class="space-y-3 mt-4 text-left hidden border-t border-borderBg pt-4">
+                                <span class="text-xs font-bold text-amber-400 block flex items-center gap-1.5">
+                                    <i data-lucide="alert-circle" class="w-4 h-4"></i> Preguntas falladas y explicaciones para corregir:
+                                </span>
+                                <div id="psychologyFailedList" class="space-y-2 text-xs"></div>
                             </div>
                         </div>
                     </div>
@@ -1626,6 +1640,8 @@
                                 <span id="histResultProfit" class="text-xl font-bold text-teal-300 block">+0 €</span>
                             </div>
                             <p id="histComment" class="text-xs text-gray-400 leading-relaxed">Las grandes empresas tecnológicas y los índices globales han demostrado una enorme resiliencia y rentabilidad a lo largo de los ciclos de mercado.</p>
+                            <!-- ENLACE BONITO DE BÚSQUEDA EN GOOGLE -->
+                            <div id="histGoogleLinkContainer" class="pt-2"></div>
                         </div>
                     </div>
                 </div>
@@ -2069,6 +2085,7 @@
         const histResultValue = document.getElementById('histResultValue');
         const histResultProfit = document.getElementById('histResultProfit');
         const histComment = document.getElementById('histComment');
+        const histGoogleLinkContainer = document.getElementById('histGoogleLinkContainer');
 
         const assetHistoricalReturns = {
             'sp500': 0.11,
@@ -2079,6 +2096,17 @@
             'alphabet': 0.18,
             'amazon': 0.17,
             'meta': 0.20
+        };
+
+        const assetSearchQueries = {
+            'sp500': 'stock s&p 500',
+            'nasdaq': 'stock nasdaq-100',
+            'microsoft': 'stock microsoft',
+            'apple': 'stock apple',
+            'nvidia': 'stock nvidia',
+            'alphabet': 'stock alphabet',
+            'amazon': 'stock amazon',
+            'meta': 'stock meta'
         };
 
         function calcHistorical() {
@@ -2094,6 +2122,20 @@
             histResultValue.textContent = formatEUR(futureVal);
             histResultProfit.textContent = '+' + formatEUR(profit);
             histComment.textContent = `Simulación basada en un rendimiento histórico estimado del ${(cagr * 100).toFixed(0)}% anual para ${histAsset.options[histAsset.selectedIndex].text} en los últimos ${years} años.`;
+
+            // Enlace de búsqueda en Google con el formato "Ver gráfica de [Nombre del Activo]"
+            const searchQuery = assetSearchQueries[assetKey] || `stock ${assetKey}`;
+            const assetName = histAsset.options[histAsset.selectedIndex].text;
+            const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+            if(histGoogleLinkContainer) {
+                histGoogleLinkContainer.innerHTML = `
+                    <a href="${googleUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-400 font-semibold rounded-xl text-xs transition shadow-sm">
+                        <span>📈 Ver gráfica de ${assetName}</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                `;
+                lucide.createIcons();
+            }
         }
 
         if(histAmount) {
@@ -2406,21 +2448,45 @@
             });
         }
 
-        // --- KNOWLEDGE QUIZ LOGIC (CONOCIMIENTOS DE BOLSA) ---
+        // --- KNOWLEDGE QUIZ LOGIC (CONOCIMIENTOS DE BOLSA) CON EXPLICACIONES ---
         const knowledgeQuizForm = document.getElementById('knowledgeQuizForm');
         const knowledgeResult = document.getElementById('knowledgeResult');
         const knowledgeTitle = document.getElementById('knowledgeTitle');
         const knowledgeDesc = document.getElementById('knowledgeDesc');
         const knowledgeScoreText = document.getElementById('knowledgeScoreText');
+        const knowledgeFailedContainer = document.getElementById('knowledgeFailedContainer');
+        const knowledgeFailedList = document.getElementById('knowledgeFailedList');
+
+        const knowledgeQuestionsData = [
+            { id: 1, title: "1. ¿Cuál es la principal ventaja matemática del interés compuesto frente al simple?", explanation: "El interés compuesto calcula los beneficios acumulados aplicando el porcentaje sobre el principal y los intereses generados previamente." },
+            { id: 2, title: "2. ¿Por qué los fondos indexados globales suelen superar a la gestión activa a largo plazo?", explanation: "Debido principalmente a sus menores comisiones de gestión y a la diversificación amplia sin sesgo sectorial." },
+            { id: 3, title: "3. Si una empresa cotiza con un PER de 30, ¿qué nos indica de forma general?", explanation: "Que los inversores están pagando 30 euros por cada euro de beneficio neto anual generado por la compañía." },
+            { id: 4, title: "4. ¿Qué ventaja fiscal clave tienen los fondos de inversión en España?", explanation: "El traspaso de capital entre fondos de inversión está exento de tributación inmediata (diferimiento fiscal)." },
+            { id: 5, title: "5. ¿Cuál es el criterio financiero recomendado para un fondo de emergencia?", explanation: "Guardar de 3 a 6 meses de los gastos esenciales fijos necesarios para la subsistencia." },
+            { id: 6, title: "6. ¿Qué busca conseguir un inversor al diversificar su cartera en diferentes sectores?", explanation: "Reducir el riesgo específico o no sistemático sin sacrificar la rentabilidad esperada a largo plazo." },
+            { id: 7, title: "7. Cuando los bancos centrales suben tipos de interés, ¿cómo reaccionan los bonos existentes?", explanation: "Su precio baja, ya que los nuevos bonos ofrecen mayor rentabilidad y los antiguos pierden atractivo." },
+            { id: 8, title: "8. ¿Qué mide exactamente el indicador financiero conocido como EBITDA?", explanation: "El resultado bruto de explotación antes de deducir intereses, impuestos, depreciaciones y amortizaciones." },
+            { id: 9, title: "9. En los mercados bursátiles, ¿cómo se define la volatilidad?", explanation: "Es la medida de la frecuencia e intensidad de las fluctuaciones de precio de un activo en el tiempo." },
+            { id: 10, title: "10. Si mantienes ahorros en cuenta al 0% con una inflación del 3%, ¿qué ocurre?", explanation: "Pierdes poder adquisitivo real, ya que puedes comprar menos bienes y servicios con la misma cantidad." },
+            { id: 11, title: "11. ¿Cuál es la diferencia jurídica entre poseer una acción y un bono?", explanation: "La acción otorga la condición de socio y propietario parcial; el bono confiere la condición de acreedor." },
+            { id: 12, title: "12. Al producirse el reparto de un dividendo en efectivo, ¿qué sucede en el mercado?", explanation: "La cotización de la acción se ajusta a la baja descontando el importe exacto del dividendo repartido." },
+            { id: 13, title: "13. ¿En qué consiste la estrategia de inversión conocida como DCA?", explanation: "Realizar aportaciones periódicas de importe fijo de forma constante, independientemente del mercado." },
+            { id: 14, title: "14. ¿A qué hace referencia el concepto de 'riesgo sistemático' en finanzas?", explanation: "Al riesgo inherente a todo el mercado o sistema económico general que no se puede eliminar diversificando." },
+            { id: 15, title: "15. ¿Por qué se aconseja un horizonte temporal largo en renta variable?", explanation: "Porque permite absorber con mayor probabilidad la volatilidad a corto plazo y beneficiarse del crecimiento secular." }
+        ];
 
         if(knowledgeQuizForm) {
             knowledgeQuizForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 let correctCount = 0;
+                let failedItems = [];
+
                 for (let i = 1; i <= 15; i++) {
                     const selected = knowledgeQuizForm.querySelector(`input[name="kq${i}"]:checked`);
                     if (selected && selected.value === 'correct') {
                         correctCount++;
+                    } else {
+                        failedItems.push(knowledgeQuestionsData[i - 1]);
                     }
                 }
 
@@ -2437,26 +2503,66 @@
                     knowledgeDesc.textContent = "¡Excelente! Demuestras un dominio muy notable de la operativa bursátil, fiscalidad y métricas financieras.";
                 }
 
+                if(failedItems.length > 0) {
+                    knowledgeFailedContainer.classList.remove('hidden');
+                    knowledgeFailedList.innerHTML = '';
+                    failedItems.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'p-3 bg-darkBg border border-borderBg rounded-xl space-y-1';
+                        div.innerHTML = `
+                            <span class="font-bold text-red-400 block">${item.title}</span>
+                            <p class="text-gray-300">💡 <strong>Por qué has fallado:</strong> ${item.explanation}</p>
+                        `;
+                        knowledgeFailedList.appendChild(div);
+                    });
+                } else {
+                    knowledgeFailedContainer.classList.add('hidden');
+                }
+
                 knowledgeResult.classList.remove('hidden');
                 knowledgeResult.scrollIntoView({ behavior: 'smooth' });
             });
         }
 
-        // --- PSYCHOLOGY QUIZ LOGIC (PSICOLOGÍA Y SESGOS) ---
+        // --- PSYCHOLOGY QUIZ LOGIC (PSICOLOGÍA Y SESGOS) CON EXPLICACIONES ---
         const psychologyQuizForm = document.getElementById('psychologyQuizForm');
         const psychologyResult = document.getElementById('psychologyResult');
         const psychologyTitle = document.getElementById('psychologyTitle');
         const psychologyDesc = document.getElementById('psychologyDesc');
         const psychologyScoreText = document.getElementById('psychologyScoreText');
+        const psychologyFailedContainer = document.getElementById('psychologyFailedContainer');
+        const psychologyFailedList = document.getElementById('psychologyFailedList');
+
+        const psychologyQuestionsData = [
+            { id: 1, title: "1. Aversión a la pérdida", explanation: "El impacto psicológico negativo de una pérdida económica se percibe con mayor intensidad que la alegría de una ganancia equivalente." },
+            { id: 2, title: "2. Efecto disposición", explanation: "Consiste en vender de forma prematura los valores con ganancias y mantener demasiado tiempo los valores con pérdidas." },
+            { id: 3, title: "3. Sesgo de confirmación", explanation: "Impulsa a buscar y valorar exclusivamente los datos que apoyan tu opinión previa, ignorando las señales contrarias." },
+            { id: 4, title: "4. Efecto rebaño o FOMO", explanation: "Es la presión social y el impulso de comprar un activo solo porque está subiendo fuertemente y todos hablan de él." },
+            { id: 5, title: "5. Sesgo de exceso de confianza", explanation: "Lleva a infravalorar el riesgo real y a sobreestimar la capacidad personal para batir al mercado constantemente." },
+            { id: 6, title: "6. Sesgo de anclaje", explanation: "Quedarse fijado mentalmente en un precio de referencia inicial (como el precio al que compraste) al valorar el activo." },
+            { id: 7, title: "7. Contabilidad mental", explanation: "Tendencia a categorizar y tratar el dinero de manera diferente según su origen, asignándole percepciones de riesgo distintas." },
+            { id: 8, title: "8. Falacia de coste hundido", explanation: "Conduce a mantener una posición perdedora solo por el dinero o tiempo ya invertido, en lugar de evaluar sus perspectivas futuras." },
+            { id: 9, title: "9. Sesgo de disponibilidad", explanation: "Dar más importancia a los riesgos o escenarios que nos vienen fácilmente a la memoria por ser recientes o llamativos." },
+            { id: 10, title: "10. Efecto dotación", explanation: "Tendencia psicológica a sobrevalorar un activo simplemente porque ya forma parte de nuestra propiedad." },
+            { id: 11, title: "11. Sesgo de recencia", explanation: "Hace creer erróneamente que las condiciones actuales del mercado (alcistas o bajistas) se mantendrán indefinidamente." },
+            { id: 12, title: "12. Aversión al remordimiento", explanation: "Posponer la toma de decisiones lógicas por el miedo intenso a equivocarse y sentir culpa por el resultado." },
+            { id: 13, title: "13. Efecto encuadre", explanation: "Reaccionar de manera diferente ante una misma opción según cómo se formulen sus datos (ej: 90% éxito vs 10% fracaso)." },
+            { id: 14, title: "14. Parálisis por análisis", explanation: "Demorar o evitar indefinidamente la toma de decisiones por buscar información perfecta e inalcanzable." },
+            { id: 15, title: "15. Ilusión de control", explanation: "Creencia errónea de que se puede influir o predecir con certeza en los movimientos aleatorios del mercado mediante análisis." }
+        ];
 
         if(psychologyQuizForm) {
             psychologyQuizForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 let correctCount = 0;
+                let failedItems = [];
+
                 for (let i = 1; i <= 15; i++) {
                     const selected = psychologyQuizForm.querySelector(`input[name="pq${i}"]:checked`);
                     if (selected && selected.value === 'correct') {
                         correctCount++;
+                    } else {
+                        failedItems.push(psychologyQuestionsData[i - 1]);
                     }
                 }
 
@@ -2471,6 +2577,22 @@
                 } else {
                     psychologyTitle.textContent = "Maestro de la Disciplina Emocional 🧘‍♂️";
                     psychologyDesc.textContent = "¡Excepcional! Comprendes a la perfección la psicología conductual, lo que te inmuniza prácticamente frente al ruido y el pánico bursátil.";
+                }
+
+                if(failedItems.length > 0) {
+                    psychologyFailedContainer.classList.remove('hidden');
+                    psychologyFailedList.innerHTML = '';
+                    failedItems.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'p-3 bg-darkBg border border-borderBg rounded-xl space-y-1';
+                        div.innerHTML = `
+                            <span class="font-bold text-red-400 block">${item.title}</span>
+                            <p class="text-gray-300">💡 <strong>Por qué has fallado:</strong> ${item.explanation}</p>
+                        `;
+                        psychologyFailedList.appendChild(div);
+                    });
+                } else {
+                    psychologyFailedContainer.classList.add('hidden');
                 }
 
                 psychologyResult.classList.remove('hidden');
