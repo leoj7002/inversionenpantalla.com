@@ -138,8 +138,8 @@
                     </div>
                 </div>
 
-                <button onclick="switchTab('glosario')" id="nav-glosario" class="tab-btn hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
-                    <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i> Glosario
+                <button onclick="switchTab('aprende')" id="nav-aprende" class="tab-btn hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Aprende
                 </button>
                 <button onclick="switchTab('quienes-somos')" id="nav-quienes-somos" class="tab-btn hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
                     <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> ¿Quiénes Somos?
@@ -181,8 +181,8 @@
             <button onclick="switchTab('herramientas'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
                 <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i> Herramientas Interactivas
             </button>
-            <button onclick="switchTab('glosario'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i> Glosario
+            <button onclick="switchTab('aprende'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Aprende
             </button>
             <button onclick="switchTab('quienes-somos'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
                 <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> ¿Quiénes Somos?
@@ -441,89 +441,8 @@
                             <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block">Capital si lo inviertes al 8% anual</span>
                             <span id="cafeTotalInvertido" class="text-4xl font-black text-emerald-400 block">0 €</span>
                             <p class="text-xs text-gray-400 leading-relaxed">
-                                Pequeños cambios inofensivos en tus hábitos diarios a los 20 años pueden financiar gran parte de tu libertad financiera futura gracias al interés compuesto.
+                                Pequeños cambios inofensivos inofensivos en tus hábitos diarios a los 20 años pueden financiar gran parte de tu libertad financiera futura gracias al interés compuesto.
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- EDUCATIONAL GUIDES SECTION -->
-            <section id="aprende" class="py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-2xl mx-auto mb-12">
-                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Aprende los Fundamentos</span>
-                        <h2 class="text-3xl font-extrabold text-white mt-1">Cómo Invertir Bien y Con Seguridad</h2>
-                        <p class="text-gray-400 text-sm mt-2">Conceptos sencillos que todo joven de 19 o 20 años debe conocer antes de invertir su dinero.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                    <i data-lucide="layers" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">1. Estrategia y Diversificación</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">El análisis fundamental te permite elegir a las mejores empresas del mundo, pero conlleva tiempo y esfuerzo aprender. Para quienes buscan simplificar su estrategia, los ETFs y fondos indexados les ofrecen diversificación global y buena rentabilidad a largo plazo sin necesidad de vigilar gráficos cada día.</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <button onclick="switchTab('test')" class="text-xs font-bold text-emerald-400 hover:underline">Test de inversión</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                    <i data-lucide="piggy-bank" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">2. Fondo de Emergencia</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Antes de invertir el primer euro, guarda de 3 a 6 meses de tus gastos en una cuenta remunerada sin riesgo. Nunca inviertas dinero que vayas a necesitar a corto plazo. Hoy en día entidades como MyInvestor te ofrecen intereses por tener el dinero en la cuenta.</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <span class="text-xs font-bold text-emerald-400 block">Tu colchón de tranquilidad</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                    <i data-lucide="alert-triangle" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">3. Evita Estafas y Humo</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Desconfía de quien prometa rentabilidades garantizadas elevadas, criptomonedas milagrosas o hacerse rico en semanas en redes sociales. La inversión real es aburrida, constante y basada en fundamentos económicos sólidos. Como dijo Warren Buffett: "El mercado de valores es un mecanismo para transferir dinero de los impacientes a los pacientes".</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <span class="text-xs font-bold text-emerald-400 block">Garantía de supervivencia</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                    <i data-lucide="scale" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">4. Límites Legales (CNMV)</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Es fundamental diferenciar entre <strong>Educación Financiera</strong> (enseñar conceptos) y <strong>Asesoramiento Financiero</strong> (decir a alguien en qué fondo poner su dinero específico), que requiere licencia regulatoria. Nosotros buscamos promover la cultura financiera entre los jóvenes.</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <span class="text-xs font-bold text-emerald-400 block">Marco ético e informativo</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-cardBg border border-borderBg p-6 rounded-2xl hover:border-emerald-500/40 transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit mb-4">
-                                    <i data-lucide="newspaper" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">5. Actualidad Diaria</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Para mantenerte informado con las mejores noticias del mercado bursátil y la economía en tiempo real, te aconsejamos seguir la comunidad de Instagram <a href="https://www.instagram.com/bolsahoy/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-semibold hover:underline">BolsaHoy</a>, donde comparten análisis rápidos y de calidad.</p>
-                            </div>
-                            <div class="mt-6 pt-4 border-t border-borderBg/60">
-                                <a href="https://www.instagram.com/bolsahoy/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1">
-                                    <span>Seguir @bolsahoy</span>
-                                    <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1684,57 +1603,193 @@
         </div>
 
 
-      <!-- ================= PESTAÑA 4: GLOSARIO ================= -->
-        <div id="tab-glosario" class="tab-content hidden py-16">
+        <!-- ================= PESTAÑA 4: APRENDA (3 MÓDULOS AGRUPADOS POR PESTAÑAS) ================= -->
+        <div id="tab-aprende" class="tab-content hidden py-16">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <!-- CABECERA DE LA PESTAÑA APRENDE -->
                 <div class="text-center">
-                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Diccionario Financiero</span>
-                    <h2 class="text-3xl font-extrabold text-white mt-3">Glosario para Jóvenes Inversores</h2>
-                    <p class="text-gray-400 text-sm mt-2">Los conceptos clave explicados de forma sencilla y directa.</p>
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase rounded-full border border-emerald-500/25">Centro de Formación & Glosario</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Aprende a Invertir con Criterio</h2>
+                    <p class="text-gray-400 text-sm mt-2">Explora nuestros módulos formativos estructurados para dominar desde los conceptos básicos hasta las estrategias avanzadas.</p>
+
+                    <!-- SELECTOR DE LOS 3 MÓDULOS DE APRENDIZAJE (ESTILO TEST) -->
+                    <div class="flex flex-wrap justify-center gap-3 mt-6">
+                        <button onclick="selectSubLearn('glosario')" id="btn-sublearn-glosario" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-black shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="book-open" class="w-4 h-4"></i> Módulo 1: Glosario Financiero
+                        </button>
+                        <button onclick="selectSubLearn('concienciacion')" id="btn-sublearn-concienciacion" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
+                            <i data-lucide="flame" class="w-4 h-4 text-emerald-400"></i> Módulo 2: ¿Por qué invertir YA?
+                        </button>
+                        <button onclick="selectSubLearn('formacion')" id="btn-sublearn-formacion" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Módulo 3: Formación Avanzada Progresiva
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid gap-4">
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">1. Interés Compuesto</h3>
-                        <p class="text-sm text-gray-300">El fenómeno por el cual los intereses obtenidos en un periodo se suman al capital principal, generando nuevos intereses en los periodos sucesivos. Es la base fundamental para construir riqueza a largo plazo gracias al efecto "bola de nieve".</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">2. Inflación</h3>
-                        <p class="text-sm text-gray-300">El incremento generalizado y continuo de los precios de los bienes y servicios en una economía durante un periodo de tiempo. Reduce el poder adquisitivo del dinero guardado sin rentabilidad.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">3. ETF (Exchange Traded Fund)</h3>
-                        <p class="text-sm text-gray-300">Fondo de inversión cotizado que agrupa una cesta de activos (como las 500 mayores empresas de EE. UU.) y se negocia en bolsa en tiempo real exactamente igual que una acción individual.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">4. Fondo de Emergencia</h3>
-                        <p class="text-sm text-gray-300">Una cantidad de dinero equivalente a entre 3 y 6 meses de tus gastos esenciales, guardada en un lugar seguro y de disponibilidad inmediata (como una cuenta remunerada) para imprevistos graves.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">5. Análisis Fundamental</h3>
-                        <p class="text-sm text-gray-300">Método de estudio financiero que evalúa la salud económica, los estados contables, los ingresos, deudas y ventajas competitivas de una empresa para determinar su valor real o intrínseco.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">6. Free Cash Flow (FCF)</h3>
-                        <p class="text-sm text-gray-300">El dinero real que le queda a una empresa después de pagar todos sus gastos operativos y de inversión en mantenimiento. Es uno de los indicadores más fiables de rentabilidad real.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">7. ROIC</h3>
-                        <p class="text-sm text-gray-300">Métrica financiera que mide cuán eficiente y rentable es una empresa asignando el capital a proyectos que generan beneficios reales para sus accionistas.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">8. PER</h3>
-                        <p class="text-sm text-gray-300">Ratio de valoración que relaciona el precio actual de cotización de una acción con el beneficio neto por acción que genera la compañía, ayudando a ver si está cara o barata (no hay que fijarse únicamente en el PER para determinar si está cara o barata, hay que analizar muchas más métricas).</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">9. Margen de Seguridad</h3>
-                        <p class="text-sm text-gray-300">El colchón o diferencia favorable entre el valor intrínseco estimado de una empresa y su precio real de cotización en el mercado bursátil, reduciendo el riesgo de pérdida.</p>
-                    </div>
-                    <div class="bg-cardBg border border-borderBg p-6 rounded-2xl">
-                        <h3 class="text-lg font-bold text-emerald-400 mb-1">10. Dividendos</h3>
-                        <p class="text-sm text-gray-300">La parte proporcional de los beneficios netos que una empresa decide repartir periódicamente en efectivo directamente a sus inversores y accionistas. En empresas maduras como PepsiCo o McDonald's suele ser más elevado.</p>
+                <!-- ================= MÓDULO 1: GLOSARIO FINANCIERO ================= -->
+                <div id="sublearn-content-glosario" class="sublearn-content space-y-6">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
+                        <div class="flex items-center gap-3 border-b border-borderBg pb-4">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Módulo 1: Diccionario Financiero (Glosario)</h3>
+                                <p class="text-xs text-gray-400 mt-0.5">Los términos esenciales que todo joven inversor debe dominar a la perfección.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid gap-4">
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">1. Interés Compuesto</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">El fenómeno por el cual los intereses obtenidos en un periodo se suman al capital principal, generando nuevos intereses en los periodos sucesivos. Es la base fundamental para construir riqueza a largo plazo gracias al efecto "bola de nieve".</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">2. Inflación</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">El incremento generalizado y continuo de los precios de los bienes y servicios en una economía durante un periodo de tiempo. Reduce el poder adquisitivo del dinero guardado sin rentabilidad.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">3. ETF (Exchange Traded Fund)</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">Fondo de inversión cotizado que agrupa una cesta de activos (como las 500 mayores empresas de EE. UU.) y se negocia en bolsa en tiempo real exactamente igual que una acción individual.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">4. Fondo de Emergencia</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">Una cantidad de dinero equivalente a entre 3 y 6 meses de tus gastos esenciales, guardada en un lugar seguro y de disponibilidad inmediata (como una cuenta remunerada) para imprevistos graves.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">5. Análisis Fundamental</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">Método de estudio financiero que evalúa la salud económica, los estados contables, los ingresos, deudas y ventajas competitivas de una empresa para determinar su valor real o intrínseco.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">6. Free Cash Flow (FCF)</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">El dinero real que le queda a una empresa después de pagar todos sus gastos operativos y de inversión en mantenimiento. Es uno de los indicadores más fiables de rentabilidad real.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">7. ROIC</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">Métrica financiera que mide cuán eficiente y rentable es una empresa asignando el capital a proyectos que generan beneficios reales para sus accionistas.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">8. PER</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">Ratio de valoración que relaciona el precio actual de cotización de una acción con el beneficio neto por acción que genera la compañía, ayudando a ver si está cara o barata (no hay que fijarse únicamente en el PER para determinar si está cara o barata, hay que analizar muchas más métricas).</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">9. Margen de Seguridad</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">El colchón o diferencia favorable entre el valor intrínseco estimado de una empresa y su precio real de cotización en el mercado bursátil, reduciendo el riesgo de pérdida.</p>
+                            </div>
+                            <div class="bg-darkBg border border-borderBg p-5 rounded-xl">
+                                <h4 class="text-base font-bold text-emerald-400 mb-1">10. Dividendos</h4>
+                                <p class="text-xs text-gray-300 leading-relaxed">La parte proporcional de los beneficios netos que una empresa decide repartir periódicamente en efectivo directamente a sus inversores y accionistas. En empresas maduras como PepsiCo o McDonald's suele ser más elevado.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- ================= MÓDULO 2: CONCIENCIACIÓN (POR QUÉ INVERTIR YA) ================= -->
+                <div id="sublearn-content-concienciacion" class="sublearn-content hidden space-y-6">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle space-y-8">
+                        <div class="flex items-center gap-3 border-b border-borderBg pb-4">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                                <i data-lucide="flame" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Módulo 2: Concienciación — ¿Por qué debes invertir YA?</h3>
+                                <p class="text-xs text-gray-400 mt-0.5">La psicología del tiempo, el coste de oportunidad real y por qué el dinero quieto en el banco te está empobreciendo.</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i> 1. El activo más valioso de tus 20 años no es el dinero, es el tiempo
+                            </h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                A los 20 años tienes algo que ningún capitalista de 50 años puede comprar con todo su dinero: <strong>décadas de margen temporal</strong>. El interés compuesto no es lineal; es exponencial. Una persona que invierte 50 € al mes desde los 20 hasta los 30 años y luego lo deja quieto, acumulará al jubilarse mucho más dinero que alguien que empieza a aportar 150 € al mes desde los 30 hasta los 65 años. Empezar antes significa que el dinero trabaja por ti durante el doble de ciclos de mercado.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                <i data-lucide="shield-alert" class="w-4 h-4"></i> 2. La falsa seguridad de la cuenta corriente (El impuesto invisible)
+                            </h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Existe la falsa creencia de que dejar los ahorros en la cuenta del banco o bajo el colchón es "cero riesgo". En realidad, estás asumiendo el riesgo más seguro de todos: <strong>perder poder adquisitivo de forma garantizada</strong>. Con una inflación media histórica del 2.5% o 3% anual, 1.000 € guardados hoy dentro de 15 años podrán comprar un 35% menos de cosas. No invertir es, matemáticamente, decidir ser más pobre cada año.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> 3. El coste de oportunidad de esperar "al momento perfecto"
+                            </h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Muchos jóvenes posponen la inversión diciendo: *"Ya empezaré cuando tenga un trabajo estable y gane 3.000 € al mes"*. Este es un error crítico. La clave para empezar a invertir no es la cantidad, sino <strong>el hábito</strong>. Acostumbrarte a apartar una pequeña fracción fija de tus primeros ingresos (ya sean becas, trabajos de verano o sueldos parciales) crea una disciplina mental inquebrantable. Esperar a tener grandes cantidades solo sirve para perder los años de mayor tracción del interés compuesto.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> 4. El decálogo del joven inversor prudente
+                            </h4>
+                            <ul class="list-disc list-inside text-xs text-gray-300 space-y-2 pl-2">
+                                <li><strong>Nunca inviertas dinero que vayas a necesitar en los próximos 3-5 años.</strong> La bolsa a corto plazo es impredecible.</li>
+                                <li><strong>Construye primero tu colchón de seguridad</strong> (3-6 meses de gastos básicos en una cuenta remunerada).</li>
+                                <li><strong>Huye de las modas rápidas y criptomonedas especulativas</strong> sin sentido fundamental.</li>
+                                <li><strong>Automatiza tus aportaciones</strong> el mismo día que ingreses tu nómina o mesada para evitar la tentación de gastarlo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= MÓDULO 3: FORMACIÓN AVANZADA PROGRESIVA ================= -->
+                <div id="sublearn-content-formacion" class="sublearn-content hidden space-y-6">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-10 rounded-2xl glow-subtle space-y-8">
+                        <div class="flex items-center gap-3 border-b border-borderBg pb-4">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Módulo 3: Formación Avanzada Progresiva</h3>
+                                <p class="text-xs text-gray-400 mt-0.5">Evolución de dificultad estructurada en 4 niveles para pasar de principiante absoluto a inversor con criterio técnico.</p>
+                            </div>
+                        </div>
+
+                        <!-- NIVEL 1 -->
+                        <div class="p-5 bg-darkBg border border-borderBg rounded-xl space-y-3">
+                            <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Nivel 1: Vehículos de Inversión y Costes Ocultos</span>
+                            <h4 class="text-sm font-bold text-white">Entendiendo qué es un TER y por qué las comisiones destruyen rentabilidad</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Cuando compras un producto financiero (fondo de gestión activa, planes de pensiones tradicionales, etc.), pagas comisiones de gestión y depósito. Aunque parezca que un 1.5% o 2% anual es poco, a lo largo de 25 o 30 años ese porcentaje puede devorar <strong>más del 40% de tus beneficios totales</strong> debido al interés compuesto inverso. Aquí es donde los fondos indexados y ETFs de bajo coste (con TER inferiores al 0.20%) marcan una diferencia colosal frente a la banca tradicional.
+                            </p>
+                        </div>
+
+                        <!-- NIVEL 2 -->
+                        <div class="p-5 bg-darkBg border border-borderBg rounded-xl space-y-3">
+                            <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Nivel 2: Diversificación Real y Descorrelación</span>
+                            <h4 class="text-sm font-bold text-white">Más allá de comprar "acciones de moda": Asset Allocation</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Comprar 5 acciones tecnológicas diferentes de Estados Unidos no es diversificar, es concentrar el riesgo en un solo sector. Una cartera verdaderamente robusta busca la <strong>descorrelación</strong>: combinar activos globales de renta variable (países desarrollados y emergentes), renta fija gubernamental de alta calidad y una pequeña parte en liquidez o activos refugio. Los fondos indexados globales (como los que replican el índice MSCI World) resuelven esto de forma automática al incluir miles de empresas de todos los sectores económicos del planeta.
+                            </p>
+                        </div>
+
+                        <!-- NIVEL 3 -->
+                        <div class="p-5 bg-darkBg border border-borderBg rounded-xl space-y-3">
+                            <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Nivel 3: Ingeniería Fiscal en España (Fondos vs Acciones)</span>
+                            <h4 class="text-sm font-bold text-white">El superpoder del diferimiento fiscal por traspasos</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                En España existe una normativa fiscal única y sumamente ventajosa para los fondos de inversión: <strong>el régimen de diferimiento fiscal por traspasos</strong>. Si tú vendes una acción individual o un ETF cotizado en bolsa para comprar otro activo, Hacienda te obliga a declarar la ganancia en la declaración de la renta (IRPF) de ese mismo año y tributar entre un 19% y un 28%. En cambio, si mueves dinero <em>entre fondos de inversión</em>, el capital se traspasa íntegro sin pasar por caja, permitiendo que el 100% de tus impuestos aplazados sigan generando intereses compuestos durante décadas hasta que decidas retirar el dinero a tu cuenta corriente.
+                            </p>
+                        </div>
+
+                        <!-- NIVEL 4 -->
+                        <div class="p-5 bg-darkBg border border-borderBg rounded-xl space-y-3">
+                            <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Nivel 4: Psicología de Mercado y Gestión de Sesgos</span>
+                            <h4 class="text-sm font-bold text-white">Cómo blindar tu mente ante las caídas bursátiles (Bear Markets)</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                El mayor enemigo de un inversor no es la economía ni la inflación, es su propio espejo. Los sesgos cognitivos como la <strong>aversión a la pérdida</strong> (sentir el doble de dolor al perder 100 € que de alegría al ganarlos) o el <strong>efecto rebaño</strong> (vender asustado cuando todo el mundo vende en las noticias) destruyen patrimonios enteros. La solución avanzada es el diseño de un <em>Plan Financiero Inquebrantable</em>: definir de antemano qué harás cuando el mercado caiga un 30% (mantener el plan y seguir aportando de forma mecánica), eliminando la toma de decisiones emocional en momentos de alta volatilidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -1873,6 +1928,7 @@
                 </div>
             </div>
         </div>
+
         <!-- FAQ SECTION -->
         <section id="faq" class="py-16 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-cardBg border border-borderBg rounded-2xl p-6 md:p-8 relative z-10 glow-subtle">
@@ -1984,6 +2040,22 @@
                 btn.classList.add('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
             });
             const activeBtn = document.getElementById('btn-subtest-' + testId);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
+                activeBtn.classList.add('bg-emerald-500', 'text-black', 'shadow-lg', 'shadow-emerald-500/20');
+            }
+        }
+
+        // LÓGICA SUB-MÓDULOS DE APRENDIZAJE (APRENDA)
+        function selectSubLearn(learnId) {
+            document.querySelectorAll('.sublearn-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('sublearn-content-' + learnId).classList.remove('hidden');
+
+            document.querySelectorAll('.sublearn-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-black', 'shadow-lg', 'shadow-emerald-500/20');
+                btn.classList.add('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
+            });
+            const activeBtn = document.getElementById('btn-sublearn-' + learnId);
             if(activeBtn) {
                 activeBtn.classList.remove('bg-cardBg', 'border', 'border-borderBg', 'text-gray-300');
                 activeBtn.classList.add('bg-emerald-500', 'text-black', 'shadow-lg', 'shadow-emerald-500/20');
