@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inversión en Pantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
+    <title>InversionEnPantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,8 +44,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- FontAwesome para Logos Oficiales de Redes Sociales -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Chart.js for interactive dynamic charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -93,7 +91,7 @@
 
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/90 border-b border-borderBg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 shrink-0">
                 <div class="p-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400">
                     <i data-lucide="trending-up" class="w-6 h-6"></i>
@@ -105,7 +103,7 @@
             </div>
             
             <!-- Navegación de Escritorio -->
-            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300 mx-auto">
+            <nav class="hidden lg:flex items-center gap-4 text-sm font-medium text-gray-300 mx-auto">
                 <button onclick="switchTab('inicio')" id="nav-inicio" class="tab-btn hover:text-emerald-400 transition-colors font-semibold text-emerald-400 flex items-center gap-1.5">
                     <i data-lucide="home" class="w-4 h-4"></i> Inicio
                 </button>
@@ -146,9 +144,18 @@
                 <button onclick="switchTab('quienes-somos')" id="nav-quienes-somos" class="tab-btn hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-white font-semibold">
                     <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> ¿Quiénes Somos?
                 </button>
+                <div class="flex items-center gap-1.5 font-semibold">
+                    <a href="https://www.youtube.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors text-red-500 flex items-center gap-1">
+                        <i data-lucide="youtube" class="w-4 h-4"></i> YouTube
+                    </a>
+                    <span class="text-gray-500">/</span>
+                    <a href="https://t.me/inversionenpantalla" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors text-sky-400 flex items-center gap-1">
+                        <i data-lucide="send" class="w-4 h-4"></i> Telegram
+                    </a>
+                </div>
             </nav>
 
-            <div class="flex shrink-0">
+            <div class="hidden sm:flex shrink-0">
                 <a href="#calculadora" onclick="switchTab('inicio')" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 text-sm">
                     <span>Simular Inversión</span>
                     <i data-lucide="calculator" class="w-4 h-4"></i>
@@ -156,35 +163,44 @@
             </div>
 
             <!-- Botón Menú Hamburguesa para Móvil -->
-            <div class="lg:hidden flex items-center ml-2">
+            <div class="lg:hidden flex items-center">
                 <button id="mobileMenuBtn" class="p-2.5 bg-cardBg border border-borderBg rounded-xl text-gray-300 hover:text-emerald-400 focus:outline-none transition">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
+        </div>
 
-            <!-- Menú Desplegable Móvil (Mejorado como capa absoluta flotante) -->
-            <div id="mobileMenu" class="hidden lg:hidden absolute top-full left-0 w-full bg-cardBg border-b border-borderBg px-6 py-6 space-y-4 shadow-2xl z-50 max-h-[80vh] overflow-y-auto">
-                <button onclick="switchTab('inicio'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                    <i data-lucide="home" class="w-4 h-4 text-emerald-400"></i> Inicio
-                </button>
-                <button onclick="switchTab('test'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                    <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> Test de inversión
-                </button>
-                <button onclick="switchTab('herramientas'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                    <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i> Herramientas Interactivas
-                </button>
-                <button onclick="switchTab('aprende'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                    <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Aprende
-                </button>
-                <button onclick="switchTab('quienes-somos'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
-                    <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> ¿Quiénes Somos?
-                </button>
-                <div class="pt-2">
-                    <a href="#calculadora" onclick="switchTab('inicio'); toggleMobileMenu();" class="w-full text-center inline-flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold px-4 py-3.5 rounded-xl text-sm shadow-md">
-                        <span>Simular Inversión</span>
-                        <i data-lucide="calculator" class="w-4 h-4"></i>
-                    </a>
-                </div>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-cardBg border-b border-borderBg px-4 py-5 space-y-3 shadow-2xl max-h-[80vh] overflow-y-auto">
+            <button onclick="switchTab('inicio'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="home" class="w-4 h-4 text-emerald-400"></i> Inicio
+            </button>
+            <button onclick="switchTab('test'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i> Test de inversión
+            </button>
+            <button onclick="switchTab('herramientas'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i> Herramientas Interactivas
+            </button>
+            <button onclick="switchTab('aprende'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Aprende
+            </button>
+            <button onclick="switchTab('quienes-somos'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl hover:bg-darkBg transition flex items-center gap-3 text-sm font-semibold text-white">
+                <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> ¿Quiénes Somos?
+            </button>
+            <div class="flex items-center justify-between px-4 py-2.5 rounded-xl hover:bg-darkBg transition text-sm font-semibold">
+                <a href="https://www.youtube.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="text-red-500 flex items-center gap-2">
+                    <i data-lucide="youtube" class="w-4 h-4"></i> YouTube
+                </a>
+                <span class="text-gray-500">/</span>
+                <a href="https://t.me/inversionenpantalla" target="_blank" rel="noopener noreferrer" class="text-sky-400 flex items-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i> Telegram
+                </a>
+            </div>
+            <div class="pt-2">
+                <a href="#calculadora" onclick="switchTab('inicio'); toggleMobileMenu();" class="w-full text-center inline-flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold px-4 py-3 rounded-xl text-sm shadow-md">
+                    <span>Simular Inversión</span>
+                    <i data-lucide="calculator" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
 
@@ -239,54 +255,9 @@
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
                             No trabajes para el dinero, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">haz que el dinero trabaje para ti.</span>
                         </h1>
-
-                        <!-- TEXTO UBICADO POR ENCIMA DE LOS ENLACES A REDES SOCIALES -->
                         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
                             Tener el dinero ahorrado bajo el colchón o en una cuenta tradicional significa perder poder adquisitivo cada día debido a la inflación. Invertir pronto te permite aprovechar la fuerza del <strong>interés compuesto</strong>.
                         </p>
-
-                        <!-- CAJAS DE REDES SOCIALES CON SUS LOGOS OFICIALES -->
-                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-8">
-                            <a href="https://www.youtube.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="bg-cardBg/80 border border-borderBg hover:border-red-500/50 p-4 rounded-2xl text-left transition group">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-9 h-9 flex items-center justify-center bg-red-500/10 text-red-500 rounded-xl group-hover:scale-110 transition">
-                                        <i class="fa-brands fa-youtube text-lg"></i>
-                                    </div>
-                                    <h4 class="text-sm font-bold text-white">YouTube</h4>
-                                </div>
-                                <p class="text-xs text-gray-400">Análisis y vídeos</p>
-                            </a>
-
-                            <a href="https://www.instagram.com/inversionenpantalla" target="_blank" rel="noopener noreferrer" class="bg-cardBg/80 border border-borderBg hover:border-pink-500/50 p-4 rounded-2xl text-left transition group">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-9 h-9 flex items-center justify-center bg-pink-500/10 text-pink-500 rounded-xl group-hover:scale-110 transition">
-                                        <i class="fa-brands fa-instagram text-lg"></i>
-                                    </div>
-                                    <h4 class="text-sm font-bold text-white">Instagram</h4>
-                                </div>
-                                <p class="text-xs text-gray-400">Tips diarios y Reels</p>
-                            </a>
-
-                            <a href="https://www.tiktok.com/@inversionenpantalla" target="_blank" rel="noopener noreferrer" class="bg-cardBg/80 border border-borderBg hover:border-cyan-400/50 p-4 rounded-2xl text-left transition group">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-9 h-9 flex items-center justify-center bg-cyan-400/10 text-cyan-400 rounded-xl group-hover:scale-110 transition">
-                                        <i class="fa-brands fa-tiktok text-lg"></i>
-                                    </div>
-                                    <h4 class="text-sm font-bold text-white">TikTok</h4>
-                                </div>
-                                <p class="text-xs text-gray-400">Directos y vídeos</p>
-                            </a>
-
-                            <a href="https://t.me/inversionenpantalla" target="_blank" rel="noopener noreferrer" class="bg-cardBg/80 border border-borderBg hover:border-sky-500/50 p-4 rounded-2xl text-left transition group">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-9 h-9 flex items-center justify-center bg-sky-500/10 text-sky-400 rounded-xl group-hover:scale-110 transition">
-                                        <i class="fa-brands fa-telegram text-lg"></i>
-                                    </div>
-                                    <h4 class="text-sm font-bold text-white">Telegram</h4>
-                                </div>
-                                <p class="text-xs text-gray-400">Comunidad y avisos</p>
-                            </a>
-                        </div>
 
                         <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-gray-400 font-medium">
                             <span class="flex items-center gap-2">
@@ -1300,7 +1271,7 @@
                             </div>
                             <!-- P12 -->
                             <div class="border-b border-borderBg/60 pb-6">
-                                <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué genera aversión al remordimiento en el ámbito de las inversiones bursátiles?</h3>
+                                <h3 class="text-sm font-bold text-white mb-3">12. ¿Qué genera la aversión al remordimiento en el ámbito de las inversiones bursátiles?</h3>
                                 <div class="grid gap-2.5 sm:grid-cols-3">
                                     <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
                                         <input type="radio" name="pq12" value="wrong" required class="accent-emerald-500"> Arrepentirse públicamente de no haber vendido un activo en su máximo histórico bursátil previo
@@ -2022,7 +1993,7 @@
                     <div class="mt-8 p-6 bg-gradient-to-r from-cardBg via-purple-950/20 to-cardBg border border-pink-500/30 rounded-2xl glow-subtle flex flex-col sm:flex-row items-center justify-between gap-6">
                         <div class="flex items-center gap-4 text-left">
                             <div class="p-3.5 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white rounded-2xl shadow-lg shrink-0">
-                                <i class="fa-brands fa-instagram text-2xl"></i>
+                                <i data-lucide="instagram" class="w-7 h-7"></i>
                             </div>
                             <div>
                                 <h4 class="text-base font-bold text-white">¡Síguenos en Instagram para no perderte nada!</h4>
@@ -2031,7 +2002,7 @@
                         </div>
                         <a href="https://www.instagram.com/inversionenpantalla" target="_blank" rel="noopener noreferrer" 
                            class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-extrabold px-6 py-3 rounded-xl transition duration-200 text-xs shadow-lg shadow-pink-600/25 whitespace-nowrap shrink-0">
-                            <i class="fa-brands fa-instagram text-sm"></i>
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
                             <span>Seguir @inversionenpantalla</span>
                         </a>
                     </div>
@@ -2102,13 +2073,6 @@
 
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.setAttribute('data-lucide', 'menu');
-            } else {
-                icon.setAttribute('data-lucide', 'x');
-            }
-            lucide.createIcons();
         }
 
         if(mobileMenuBtn) {
