@@ -11,7 +11,19 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inversión en Pantalla | Educación Financiera e Interés Compuesto para Jóvenes</title>
+    <title>Inversión en Pantalla | Educación Financiera, Análisis Fundamental e Interés Compuesto</title>
+    <meta name="description" content="Plataforma gratuita de educación financiera creada por universitarios: calculadoras de interés compuesto y FIRE, simuladores de cartera, guías de análisis fundamental y fondos indexados en España.">
+    <meta name="keywords" content="educación financiera jóvenes, interés compuesto, análisis fundamental, fondos indexados España, calculadora FIRE, inversión a largo plazo, Inversión en Pantalla">
+    <meta name="author" content="Joel Anglés, Miguel Forés y Raúl Margean - Inversión en Pantalla">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://inversionenpantalla.com/">
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Inversión en Pantalla">
+    <meta property="og:title" content="Inversión en Pantalla | Educación Financiera e Interés Compuesto para Jóvenes">
+    <meta property="og:description" content="Aprende a invertir con criterio: calculadoras interactivas, guías extensas de análisis fundamental, psicología bursátil y gestión pasiva en España.">
+    <meta property="og:url" content="https://inversionenpantalla.com/">
+    <meta property="og:locale" content="es_ES">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -480,6 +492,67 @@
                                 Pequeños cambios inofensivos en tus hábitos diarios a los 20 años pueden financiar gran parte de tu libertad financiera futura gracias al interés compuesto.
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN EDITORIAL DESTACADA EN INICIO (VALOR EDUCATIVO Y ANÁLISIS PROPIO) -->
+            <section class="py-16 border-t border-borderBg bg-cardBg/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                        <div>
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Artículos y Análisis Originales</span>
+                            <h2 class="text-3xl font-extrabold text-white mt-1">Guías de Educación Financiera en Profundidad</h2>
+                            <p class="text-gray-400 text-sm mt-2 max-w-2xl">Contenido formativo redactado por nuestro equipo universitario para ayudarte a comprender los mercados con rigor y criterio propio.</p>
+                        </div>
+                        <button onclick="switchTab('aprende'); selectSubLearn('articulos');" class="inline-flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold px-4 py-2.5 rounded-xl text-xs transition shrink-0 w-fit">
+                            <span>Leer todas las guías completas</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <article class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <span class="inline-block px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase rounded-md">Hoja de Ruta España</span>
+                                <h3 class="text-lg font-bold text-white leading-snug">Cómo empezar a invertir desde cero en España con poco capital</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Analizamos paso a paso cómo estructurar tus finanzas antes de invertir: desde la creación del fondo de emergencia en cuentas remuneradas hasta la elección entre fondos indexados con diferimiento fiscal y acciones individuales mediante aportaciones periódicas (DCA).
+                                </p>
+                            </div>
+                            <button onclick="switchTab('aprende'); selectSubLearn('articulos');" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1 pt-2 border-t border-borderBg/60">
+                                <span>Leer artículo completo</span>
+                                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </article>
+
+                        <article class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <span class="inline-block px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase rounded-md">Análisis Fundamental</span>
+                                <h3 class="text-lg font-bold text-white leading-snug">Las 5 métricas clave que evaluamos antes de invertir en una empresa</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Descubre cómo estudiar un negocio más allá de la cotización diaria: ventajas competitivas sostenibles (moat), generación real de flujo de caja libre (FCF), retorno sobre el capital invertido (ROIC), solvencia del balance y margen de seguridad en la valoración.
+                                </p>
+                            </div>
+                            <button onclick="switchTab('aprende'); selectSubLearn('articulos');" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1 pt-2 border-t border-borderBg/60">
+                                <span>Leer artículo completo</span>
+                                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </article>
+
+                        <article class="bg-cardBg border border-borderBg p-6 rounded-2xl flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition">
+                            <div class="space-y-3">
+                                <span class="inline-block px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase rounded-md">Estrategia Bursátil</span>
+                                <h3 class="text-lg font-bold text-white leading-snug">Diversificación frente a concentración: cuándo elegir cada estrategia</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Comparamos la inversión pasiva ampliamente diversificada frente a las carteras concentradas por alta convicción. Entiende por qué la mejor estrategia depende directamente de tu nivel de formación financiera y del tiempo que dediques al análisis.
+                                </p>
+                            </div>
+                            <button onclick="switchTab('aprende'); selectSubLearn('articulos');" class="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1 pt-2 border-t border-borderBg/60">
+                                <span>Leer artículo completo</span>
+                                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -1086,7 +1159,7 @@
                                 <h3 class="text-sm font-bold text-white mb-3">15. ¿Por qué se aconseja un horizonte temporal largo (más de 10 años) al invertir en renta variable?</h3>
                                 <div class="grid gap-2.5 sm:grid-cols-3">
                                     <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
-                                        <input type="radio" name="kq15" value="wrong" required class="accent-emerald-500"> Porque las comisiones de los fondos se reducen obligatoriamente a partir de la décima année
+                                        <input type="radio" name="kq15" value="wrong" required class="accent-emerald-500"> Porque las comisiones de los fondos se reducen obligatoriamente a partir de la décimo año
                                     </label>
                                     <label class="flex items-center gap-2.5 p-3.5 bg-darkBg border border-borderBg rounded-xl cursor-pointer hover:border-emerald-500/50 transition text-xs text-gray-300">
                                         <input type="radio" name="kq15" value="correct" class="accent-emerald-500"> Porque permite absorber con mayor probabilidad la volatilidad a corto plazo y beneficiarse del crecimiento secular
@@ -1730,22 +1803,116 @@
                     <h2 class="text-3xl font-extrabold text-white mt-3">Aprende a Invertir con Criterio</h2>
                     <p class="text-gray-400 text-sm mt-2">Explora nuestros módulos formativos estructurados para dominar desde los conceptos básicos hasta las estrategias avanzadas.</p>
 
-                    <!-- SELECTOR DE LOS 3 MÓDULOS DE APRENDIZAJE (ESTILO TEST) -->
+                    <!-- SELECTOR DE LOS 4 MÓDULOS DE APRENDIZAJE (ESTILO TEST) -->
                     <div class="flex flex-wrap justify-center gap-3 mt-6">
-                        <button onclick="selectSubLearn('glosario')" id="btn-sublearn-glosario" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-black shadow-lg shadow-emerald-500/20">
-                            <i data-lucide="book-open" class="w-4 h-4"></i> Módulo 1: Glosario Financiero
+                        <button onclick="selectSubLearn('articulos')" id="btn-sublearn-articulos" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-black shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="file-text" class="w-4 h-4"></i> Artículos y Guías en Profundidad
+                        </button>
+                        <button onclick="selectSubLearn('glosario')" id="btn-sublearn-glosario" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
+                            <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i> Módulo 1: Glosario Financiero
                         </button>
                         <button onclick="selectSubLearn('concienciacion')" id="btn-sublearn-concienciacion" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
                             <i data-lucide="flame" class="w-4 h-4 text-emerald-400"></i> Módulo 2: ¿Por qué invertir YA?
                         </button>
                         <button onclick="selectSubLearn('formacion')" id="btn-sublearn-formacion" class="sublearn-btn px-4 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-cardBg border border-borderBg text-gray-300 hover:text-white">
-                            <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Módulo 3: Formación Avanzada Progresiva
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-400"></i> Módulo 3: Formación Avanzada
                         </button>
                     </div>
                 </div>
 
                 <!-- ================= MÓDULO 1: GLOSARIO FINANCIERO ================= -->
-                <div id="sublearn-content-glosario" class="sublearn-content space-y-6">
+                <!-- ================= MÓDULO EDITORIAL: ARTÍCULOS Y GUÍAS EN PROFUNDIDAD ================= -->
+                <div id="sublearn-content-articulos" class="sublearn-content space-y-8">
+                    <div class="bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-borderBg pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                                    <i data-lucide="newspaper" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Publicaciones y Guías Originales del Equipo</h3>
+                                    <p class="text-xs text-gray-400 mt-0.5">Artículos extensos redactados por nuestro equipo sobre inversión a largo plazo, análisis fundamental y finanzas personales en España.</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 bg-darkBg border border-borderBg rounded-lg text-[11px] text-emerald-400 font-semibold shrink-0">Actualizado Noviembre 2026</span>
+                        </div>
+
+                        <!-- ARTÍCULO 1 -->
+                        <article class="bg-darkBg border border-borderBg p-6 sm:p-7 rounded-2xl space-y-4">
+                            <div class="flex flex-wrap items-center gap-2 text-[11px] text-gray-400">
+                                <span class="px-2.5 py-0.5 bg-emerald-500/10 text-emerald-400 font-bold rounded-md">Guía Práctica España</span>
+                                <span>•</span>
+                                <span>Por <strong>Joel Anglés</strong></span>
+                                <span>•</span>
+                                <span>Lectura de 6 min</span>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-extrabold text-white leading-snug">Cómo empezar a invertir desde cero en España con poco capital: hoja de ruta paso a paso</h4>
+                            <div class="space-y-3 text-xs sm:text-[13px] text-gray-300 leading-relaxed">
+                                <p>
+                                    Uno de los mayores mitos entre los jóvenes universitarios y recién incorporados al mercado laboral es pensar que para invertir en bolsa hace falta disponer de decenas de miles de euros. La realidad financiera demuestra exactamente lo contrario: <strong>empezar con cantidades modestas (50 € o 100 € al mes) a los 19 o 20 años tiene un impacto patrimonial superior a empezar con grandes sumas a los 40</strong>, debido a la naturaleza exponencial del interés compuesto.
+                                </p>
+                                <p>
+                                    <strong>Paso 1: Saneamiento y fondo de emergencia.</strong> Antes de comprar tu primer activo de renta variable, debes asegurarte de no tener deudas de consumo con intereses elevados (tarjetas revolving o préstamos rápidos) y construir un colchón equivalente a entre 3 y 6 meses de tus gastos fijos esenciales. En España, este capital debe alojarse en una cuenta remunerada o fondo monetario con liquidez inmediata y cobertura del Fondo de Garantía de Depósitos (hasta 100.000 € por titular y entidad).
+                                </p>
+                                <p>
+                                    <strong>Paso 2: Definir tu vehículo de inversión según tu dedicación.</strong> Si no deseas dedicar horas semanales a leer informes trimestrales y balances contables, la gestión pasiva indexada mediante fondos indexados globales (como los que replican el índice MSCI World o el S&P 500) ofrece una diversificación instantánea entre cientos de empresas líderes mundiales con comisiones anuales (TER) inferiores al 0,20%. Además, en España los fondos de inversión disfrutan del <strong>diferimiento fiscal por traspasos</strong>, lo que permite reequilibrar tu cartera sin tributar plusvalías hasta el reembolso definitivo.
+                                </p>
+                                <p>
+                                    <strong>Paso 3: Automatización mediante Dollar-Cost Averaging (DCA).</strong> Programar una transferencia periódica el mismo día en que recibes tus ingresos elimina el componente emocional de intentar adivinar si la bolsa está cara o barata. Cuando el mercado cae, tu aportación fija compra más participaciones; cuando sube, tu patrimonio acumulado se revaloriza. La constancia vence siempre a la especulación a corto plazo.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- ARTÍCULO 2 -->
+                        <article class="bg-darkBg border border-borderBg p-6 sm:p-7 rounded-2xl space-y-4">
+                            <div class="flex flex-wrap items-center gap-2 text-[11px] text-gray-400">
+                                <span class="px-2.5 py-0.5 bg-emerald-500/10 text-emerald-400 font-bold rounded-md">Análisis Fundamental</span>
+                                <span>•</span>
+                                <span>Por <strong>Raúl Margean y Miguel Forés</strong></span>
+                                <span>•</span>
+                                <span>Lectura de 7 min</span>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-extrabold text-white leading-snug">Las 5 métricas clave que analizamos antes de invertir en una empresa individual</h4>
+                            <div class="space-y-3 text-xs sm:text-[13px] text-gray-300 leading-relaxed">
+                                <p>
+                                    Cuando damos el paso de invertir en acciones individuales (stock picking), dejamos de comprar un ticker que sube o baja en una pantalla para convertirnos en propietarios reales de una fracción de un negocio. En <strong>Inversión en Pantalla</strong> evaluamos cada compañía bajo cinco pilares fundamentales antes de estimar su valoración:
+                                </p>
+                                <ul class="list-disc list-inside space-y-2 pl-2 text-gray-300">
+                                    <li><strong>1. Ventaja Competitiva Sostenible (Economic Moat):</strong> Analizamos qué protege a la empresa de sus competidores: efecto red (como Meta o Alphabet), costes de cambio elevados (como Microsoft en software empresarial), activos intangibles de marca o economías de escala. Sin un foso defensivo claro, los márgenes elevados acaban siendo erosionados por la competencia.</li>
+                                    <li><strong>2. Conversión en Flujo de Caja Libre (Free Cash Flow):</strong> El beneficio contable puede verse alterado por ajustes fiscales o amortizaciones, pero el flujo de caja libre muestra el efectivo real que queda en la caja tras cubrir gastos operativos y inversiones de capital (CapEx). Buscamos negocios con márgenes FCF crecientes y predecibles.</li>
+                                    <li><strong>3. Retorno sobre el Capital Invertido (ROIC):</strong> Un ROIC consistentemente superior al 15% indica que el equipo directivo es capaz de reinvertir los beneficios del negocio a tasas muy altas, generando un efecto compuesto interno dentro de la propia compañía.</li>
+                                    <li><strong>4. Solvencia y Salud del Balance (Deuda Neta / EBITDA):</strong> Evitamos compañías excesivamente apalancadas que puedan sufrir en entornos de tipos de interés altos. Una ratio Deuda Neta / EBITDA inferior a 2x (o directamente posición de caja neta) otorga resiliencia ante recesiones económicas.</li>
+                                    <li><strong>5. Valoración y Margen de Seguridad:</strong> Incluso la mejor empresa del mundo puede ser una mala inversión si se paga un precio desorbitado por ella. Comparamos múltiplos históricos (PER, EV/FCF) con nuestras proyecciones conservadoras a 5 años vista para exigir siempre un margen de seguridad razonable.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- ARTÍCULO 3 -->
+                        <article class="bg-darkBg border border-borderBg p-6 sm:p-7 rounded-2xl space-y-4">
+                            <div class="flex flex-wrap items-center gap-2 text-[11px] text-gray-400">
+                                <span class="px-2.5 py-0.5 bg-emerald-500/10 text-emerald-400 font-bold rounded-md">Estrategia y Filosofía</span>
+                                <span>•</span>
+                                <span>Por <strong>Equipo Inversión en Pantalla</strong></span>
+                                <span>•</span>
+                                <span>Lectura de 5 min</span>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-extrabold text-white leading-snug">Diversificación frente a concentración: ¿cuándo tiene sentido cada enfoque?</h4>
+                            <div class="space-y-3 text-xs sm:text-[13px] text-gray-300 leading-relaxed">
+                                <p>
+                                    En la educación financiera tradicional suele repetirse como un dogma inamovible que hay que diversificar al máximo en decenas o cientos de activos. Sin embargo, como señaló Warren Buffett, <em>"la diversificación es una protección contra la ignorancia; tiene muy poco sentido para quienes saben lo que están haciendo"</em>.
+                                </p>
+                                <p>
+                                    La clave reside en el <strong>grado de conocimiento y el tiempo de seguimiento</strong> de cada inversor. Para el 90% de las personas que tienen otras carreras profesionales y no analizan estados financieros cada semana, una cartera indexada ampliamente diversificada es la opción matemáticamente óptima: elimina el riesgo específico de quiebra de una empresa concreta y captura la rentabilidad media histórica del mercado global.
+                                </p>
+                                <p>
+                                    Por el contrario, cuando un inversor domina la contabilidad financiera, entiende los modelos de negocio y dedica tiempo riguroso a estudiar cada empresa en profundidad, concentrar la cartera en sus mejores ideas (por ejemplo, entre 8 y 15 compañías de máxima calidad compradas a valoraciones atractivas) permite aspirar a rentabilidades superiores a la media sin diluir el impacto de sus mejores análisis. Ambas estrategias son válidas siempre que sean coherentes con la preparación real del inversor.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="sublearn-content-glosario" class="sublearn-content hidden space-y-6">
                     <div class="bg-cardBg border border-borderBg p-6 sm:p-8 rounded-2xl glow-subtle space-y-6">
                         <div class="flex items-center gap-3 border-b border-borderBg pb-4">
                             <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
@@ -2088,8 +2255,23 @@
                 <div class="text-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Preguntas Frecuentes y Consultas</h2>
                     <p class="text-gray-400 text-xs mt-1">
-                        Envíanos tus dudas a <a href="mailto:inversionenpantalla@gmail.com" class="text-emerald-400 font-semibold hover:underline">inversionenpantalla@gmail.com</a>.
+                        Resolvemos las dudas más habituales entre jóvenes inversores o escríbenos directamente a <a href="mailto:inversionenpantalla@gmail.com" class="text-emerald-400 font-semibold hover:underline">inversionenpantalla@gmail.com</a>.
                     </p>
+                </div>
+
+                <div class="space-y-3 mb-8 text-left">
+                    <div class="bg-darkBg border border-borderBg p-4 rounded-xl">
+                        <h3 class="text-xs sm:text-sm font-bold text-emerald-400 mb-1">¿Cuánto dinero necesito como mínimo para empezar a invertir?</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">Hoy en día puedes empezar a invertir en fondos indexados o acciones fraccionadas desde apenas 10 € o 50 € al mes. Lo más importante a los 18-25 años no es el capital inicial, sino adquirir el hábito constante y aprovechar décadas de interés compuesto.</p>
+                    </div>
+                    <div class="bg-darkBg border border-borderBg p-4 rounded-xl">
+                        <h3 class="text-xs sm:text-sm font-bold text-emerald-400 mb-1">¿Qué diferencia existe entre un fondo indexado y un ETF en España?</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">Ambos replican un índice bursátil (como el S&P 500 o el MSCI World) con bajas comisiones, pero en España los fondos de inversión permiten realizar traspasos entre fondos sin tributar por las plusvalías acumuladas hasta la venta final, mientras que los ETF tributan como acciones en cada venta.</p>
+                    </div>
+                    <div class="bg-darkBg border border-borderBg p-4 rounded-xl">
+                        <h3 class="text-xs sm:text-sm font-bold text-emerald-400 mb-1">¿Es seguro invertir a través de plataformas online reguladas?</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">Siempre debes comprobar que la entidad esté supervisada por organismos oficiales como el Banco de España o la CNMV. Las cuentas de efectivo están cubiertas hasta 100.000 € por el Fondo de Garantía de Depósitos y los valores pertenecen siempre al inversor fuera del balance del bróker.</p>
+                    </div>
                 </div>
 
                 <form id="qaForm" action="https://formspree.io/f/xppqenbg" method="POST" class="space-y-4">
